@@ -1,3 +1,7 @@
+# Noah-Manuel Michael
+# 06.05.2023
+# Experiments with decorators
+
 def my_first_decorator(original_function):
     def wrapper(*args, **kwargs):
         my_list = ['0th_list_space']
