@@ -1,3 +1,7 @@
+# Noah-Manuel Michael
+# 30.04.2023
+# Scramble the readability data
+
 import pandas as pd
 import re
 import spacy

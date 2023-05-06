@@ -1,3 +1,7 @@
+# Noah-Manuel Michael
+# 06.05.2023
+# Clean construction of discodop trees and probabilities
+
 from discodop import parser, tree
 import pandas as pd
 

@@ -1,3 +1,7 @@
+# Noah-Manuel Michael
+# 06.05.2023
+# Shuffle sentences and get all possible permutations
+
 import random
 import itertools
 import re

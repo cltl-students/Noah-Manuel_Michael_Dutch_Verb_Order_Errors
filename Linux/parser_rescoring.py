@@ -1,3 +1,7 @@
+# Noah-Manuel Michael
+# 06.05.2023
+# Rescore based on all possible parses and their scores
+
 import itertools
 import re
 from discodop import parser, tree

@@ -1,3 +1,7 @@
+# Noah-Manuel Michael
+# 06.05.2023
+# Frog parser
+
 from frog import Frog, FrogOptions
 import pandas as pd
 
