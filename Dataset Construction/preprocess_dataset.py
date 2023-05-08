@@ -4,6 +4,10 @@ from collections import defaultdict, Counter
 
 
 def main():
+    """
+
+    :return:
+    """
     # read in the original dataset
     df = pd.read_csv('dataset_cefr_dutch.csv', sep=',', header=0, encoding='utf-8')
 
@@ -46,8 +50,6 @@ def main():
 
     df_processed = pd.DataFrame([text for text in texts_to_average_level.keys()], columns=['text'])
     df_processed['level'] = [level for level in texts_to_average_level.values()]
-
-    print(df_processed)
 
     df_processed.to_csv('dataset_cefr_dutch_preprocessed.tsv', sep='\t', index_label='Index', encoding='utf-8',
                         header=True)
