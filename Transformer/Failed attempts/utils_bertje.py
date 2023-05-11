@@ -121,6 +121,6 @@ def predict_reordered_sequence(model, input_sequences, tokenizer):
 
         reordered_tokens = [input_tokens[i] for i, _ in indexed_positions if input_tokens[i] not in ['[CLS]', '[SEP]']]
 
-        print(' '.join(reordered_tokens).replace('##', ''))
+        print(' '.join(reordered_tokens).replace(' ##', ''))
 
     # return reordered_tokens

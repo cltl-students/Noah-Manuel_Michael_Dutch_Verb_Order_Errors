@@ -1,7 +1,7 @@
 # 20.01.2023
 # Lisa's code experiment with transformer models
 
-from transformers import BertTokenizer, BertLMHeadModel, BertConfig, GPT2LMHeadModel, GPT2TokenizerFast, GPT2Config
+from transformers import GPT2LMHeadModel, GPT2TokenizerFast, GPT2Config
 import torch
 import math
 

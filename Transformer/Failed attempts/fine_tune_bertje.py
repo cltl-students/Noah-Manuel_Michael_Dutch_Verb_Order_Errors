@@ -12,10 +12,10 @@ from torch.optim import AdamW
 from utils_bertje import TokenReorganizer, masked_accuracy, masked_cross_entropy_loss, validate, get_input_ids, \
     get_pointer_labels, get_attention_masks, predict_reordered_sequence
 
-df = pd.read_csv('../Dataset Construction/scrambled_data.tsv', sep='\t', header=0, encoding='utf-8')
+df = pd.read_csv('../../Dataset Construction/scrambled_data.tsv', sep='\t', header=0, encoding='utf-8')
 
-inputs = df['scrambled'][:1000].tolist()
-targets = df['original'][:1000].tolist()
+inputs = df['scrambled'][:10].tolist()
+targets = df['original'][:10].tolist()
 
 tokenizer = BertTokenizer.from_pretrained('GroNLP/bert-base-dutch-cased')
 model = TokenReorganizer.from_pretrained('GroNLP/bert-base-dutch-cased')
@@ -78,6 +78,6 @@ for epoch in range(num_epochs):
     val_accuracy = validate(model, val_dataloader, device)
     print(f"Validation Accuracy: {val_accuracy:.4f}")
 
-    input_sequences = df['scrambled'][1000:1005].tolist()
+    input_sequences = df['scrambled'][:10].tolist()
 
     predict_reordered_sequence(model, input_sequences, tokenizer)
