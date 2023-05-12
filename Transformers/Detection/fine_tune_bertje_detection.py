@@ -14,9 +14,9 @@
 import pandas as pd
 from transformers import BertTokenizer, BertForSequenceClassification
 from transformers import Trainer, TrainingArguments
-from utils_detection import SequenceClassificationDataset
+from utils_bertje_detection import SequenceClassificationDataset
 
-df = pd.read_csv('../../Data/Dataset Construction/Data/scrambled_data.tsv', sep='\t', header=0, encoding='utf-8')
+df = pd.read_csv('../../Data/Dataset Construction/Data/readability_data_scrambled.tsv', sep='\t', header=0, encoding='utf-8')
 
 # num_labels = 2
 tokenizer = BertTokenizer.from_pretrained('GroNLP/bert-base-dutch-cased')
@@ -34,7 +34,7 @@ val_labels = [1 for _ in range(int(len(val_texts)/2))] + \
 train_dataset = SequenceClassificationDataset(train_texts, train_labels, tokenizer)
 val_dataset = SequenceClassificationDataset(val_texts, val_labels, tokenizer)
 
-training_args = TrainingArguments(output_dir='results',
+training_args = TrainingArguments(output_dir='results_bertje_detection',
                                   num_train_epochs=3,
                                   per_device_train_batch_size=16,
                                   per_device_eval_batch_size=16,

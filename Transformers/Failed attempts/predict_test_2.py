@@ -1,7 +1,7 @@
 import torch
 from transformers import BertTokenizer, BertForMaskedLM
 
-MODEL_PATH = "results/checkpoint-3"  # Replace "XXXX" with the actual checkpoint number
+MODEL_PATH = "results_bertje_detection/checkpoint-3"  # Replace "XXXX" with the actual checkpoint number
 scrambled_sentence = "Ga je huis naar?"
 
 tokenizer = BertTokenizer.from_pretrained("GroNLP/bert-base-dutch-cased")

@@ -7,7 +7,7 @@ import pandas as pd
 
 
 def main():
-	df = pd.read_csv('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Data/annotated_data.tsv', sep='\t',
+	df = pd.read_csv('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Data/leerder_annotated_data.tsv', sep='\t',
 					 keep_default_na=False)
 	sentence_list = df['Corrected'].tolist()
 

@@ -20,8 +20,8 @@ reorder_dataset = ReorderDataset(correct_sentences, scrambled_sentences, tokeniz
 
 # Create training arguments and the Trainer
 training_args = TrainingArguments(
-    output_dir="results",
-    num_train_epochs=1,  # You should use more epochs for better results
+    output_dir="results_bertje_detection",
+    num_train_epochs=1,  # You should use more epochs for better results_bertje_detection
     per_device_train_batch_size=8,
     logging_dir="./logs",
     save_strategy="epoch"

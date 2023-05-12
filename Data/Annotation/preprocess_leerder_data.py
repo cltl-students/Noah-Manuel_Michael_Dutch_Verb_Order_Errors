@@ -11,7 +11,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from collections import defaultdict
 
-with open('Annotation/Data/corpus_NT2_ILT.html', encoding='utf-8') as infile:
+with open('Annotation/Data/leerder_corpus_KU.html', encoding='utf-8') as infile:
     html = infile.read()
 
 soup = BeautifulSoup(html, 'html.parser')
@@ -44,4 +44,4 @@ for row_data in data:
 
 df = pd.DataFrame.from_dict(df_dictionary)
 
-df.to_csv('Annotation/Data/corpus_data.tsv', sep='\t', header=True, index=True, index_label='Index', encoding='utf-8')
+df.to_csv('Annotation/Data/leerder_corpus_KU_preprocessed.tsv', sep='\t', header=True, index=True, index_label='Index', encoding='utf-8')

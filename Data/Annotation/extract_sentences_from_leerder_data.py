@@ -5,13 +5,13 @@
 import pandas as pd
 import os
 
-df = pd.read_csv('Annotation/Data/corpus_data.tsv', sep='\t', encoding='utf-8', header=0, keep_default_na=False)
+df = pd.read_csv('Annotation/Data/leerder_corpus_KU_preprocessed.tsv', sep='\t', encoding='utf-8', header=0, keep_default_na=False)
 
-if 'erroneous_sentences.tsv' not in os.listdir('Annotation/Data'):
-    with open('Annotation/Data/erroneous_sentences.tsv', 'w') as outfile:
+if 'leerder_erroneous_sentences.tsv' not in os.listdir('Annotation/Data'):
+    with open('Annotation/Data/leerder_erroneous_sentences.tsv', 'w') as outfile:
         outfile.write('Index\tLevel\tLanguage\tContent\tSentence\tErrors\tErroneous_words\tComment\n')
 
-with open('Annotation/Data/erroneous_sentences.tsv', encoding='utf-8') as infile:
+with open('Annotation/Data/leerder_erroneous_sentences.tsv', encoding='utf-8') as infile:
     content = infile.readlines()
     if len(content) > 1:
         for line in content[1:]:
@@ -50,6 +50,6 @@ for i, row in df.iloc[last_index+1:].iterrows():
     comment_no_new_lines = comment.replace('\n', ' ')
 
     if original_sentence != 'skip':
-        with open('Annotation/Data/erroneous_sentences.tsv', 'a', encoding='utf-8') as outfile:
+        with open('Annotation/Data/leerder_erroneous_sentences.tsv', 'a', encoding='utf-8') as outfile:
             outfile.write(f'{index}\t{level}\t{language}\t{content}\t{original_sentence}\t'
                           f'{errors_no_new_lines}\t{erroneous_words}\t{comment_no_new_lines}\n')

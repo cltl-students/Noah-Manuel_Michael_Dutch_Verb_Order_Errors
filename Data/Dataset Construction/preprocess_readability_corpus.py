@@ -9,7 +9,7 @@ def main():
     :return:
     """
     # read in the original dataset
-    df = pd.read_csv('Data/dataset_cefr_dutch.csv', sep=',', header=0, encoding='utf-8')
+    df = pd.read_csv('Data/readability_corpus_edia.csv', sep=',', header=0, encoding='utf-8')
 
     # get rid of new line characters and double spaces
     all_texts = [re.sub(r'\n', ' ', text) for text in df['text_plain']]
@@ -51,7 +51,7 @@ def main():
     df_processed = pd.DataFrame([text for text in texts_to_average_level.keys()], columns=['text'])
     df_processed['level'] = [level for level in texts_to_average_level.values()]
 
-    df_processed.to_csv('dataset_cefr_dutch_preprocessed.tsv', sep='\t', index_label='Index', encoding='utf-8',
+    df_processed.to_csv('readability_corpus_edia_preprocessed.tsv', sep='\t', index_label='Index', encoding='utf-8',
                         header=True)
 
 

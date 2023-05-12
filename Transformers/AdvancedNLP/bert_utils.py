@@ -292,7 +292,7 @@ def evaluate_bert_model(eval_dataloader: DataLoader, eval_batch_size: int, model
     :param full_report: whether to print a full report
     :param prefix: the name of the test set
     :param mode: the fine-tuning mode
-    :return: results, full_word_preds
+    :return: results_bertje_detection, full_word_preds
     """
     logger.info("***** Running evaluation %s *****", prefix)
     logger.info("  Batch size = %d", eval_batch_size)

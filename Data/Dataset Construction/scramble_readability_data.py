@@ -14,7 +14,7 @@ def main():
     :return:
     """
     # read in the original texts from the readability corpus
-    df_texts = pd.read_csv('Data/dataset_cefr_dutch_preprocessed.tsv', sep='\t', header=0, encoding='utf-8')
+    df_texts = pd.read_csv('Data/readability_corpus_edia_preprocessed.tsv', sep='\t', header=0, encoding='utf-8')
 
     # instantiate pipeline
     nlp = spacy.load('nl_core_news_sm')
@@ -110,7 +110,7 @@ def main():
     df_orig['scrambled_no_punc_lower'] = [' '.join(sent) for sent in all_sentences_tokenized_scrambled_no_punc_lower]
 
     # write the df to file
-    df_orig.to_csv('scrambled_data.tsv', sep='\t', header=True, encoding='utf-8', index_label='index')
+    df_orig.to_csv('readability_data_scrambled.tsv', sep='\t', header=True, encoding='utf-8', index_label='index')
     print('Scrambled data saved to file.')
 
 

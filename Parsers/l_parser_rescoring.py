@@ -47,7 +47,7 @@ def main():
 	myparser = parser.Parser(params)
 	myparser.stages[-1].estimator = 'rfe'
 
-	# store the probabilities of all parsers, as well as the rest of the results and the sentences
+	# store the probabilities of all parsers, as well as the rest of the results_bertje_detection and the sentences
 	result_probabilities = []
 	results_per_probability = {}
 	sentences_per_probability = {}

@@ -5,14 +5,14 @@
 import pandas as pd
 import os
 
-df = pd.read_csv('Data/erroneous_sentences.tsv', sep='\t', encoding='utf-8', header=0, keep_default_na=False)
+df = pd.read_csv('Data/leerder_erroneous_sentences.tsv', sep='\t', encoding='utf-8', header=0, keep_default_na=False)
 
-if 'annotated_data.tsv' not in os.listdir('Data'):
-    with open('Annotation/Data/annotated_data.tsv', 'w') as outfile:
+if 'leerder_annotated_data.tsv' not in os.listdir('Data'):
+    with open('Annotation/Data/leerder_annotated_data.tsv', 'w') as outfile:
         outfile.write('Index\tLevel\tLanguage\tSentence\tNormalized\tCorrected\tClause_type\tVerb_type\tError_type\t'
                       'Clause_structure\tConfidence\n')
 
-with open('Data/annotated_data.tsv', encoding='utf-8') as infile:
+with open('Data/leerder_annotated_data.tsv', encoding='utf-8') as infile:
     content = infile.readlines()
     if len(content) > 1:
         for line in content[1:]:
@@ -104,7 +104,7 @@ for i, row in df.iterrows():
                 print(normalized_sentence)
                 clause_structure = input('Clause structure: ')
 
-            with open('Data/annotated_data.tsv', 'a', encoding='utf-8') as outfile:
+            with open('Data/leerder_annotated_data.tsv', 'a', encoding='utf-8') as outfile:
                 outfile.write(f'{index}\t{level}\t{language}\t{original_sentence}\t{normalized_sentence}\t'
                               f'{corrected_sentence}\t{clause_type}\t{verb_type}\t{error_type}\t{clause_structure}\t'
                               f'{confidence}\n')
