@@ -1,12 +1,13 @@
 # Noah-Manuel Michael
-# 06.05.2023
-# Shuffle sentences and get all possible permutations
+# Created: 06.05.2023
+# Last updated: 12.05.2023
+# Experiments for shuffling sentences and getting all possible permutations
 
 import random
 import itertools
 import re
 
-with open('../Test/short_story.txt') as infile:
+with open('../Tests/short_story.txt') as infile:
     sentences = []
     for line in infile.readlines():
         print(line)

@@ -1,5 +1,6 @@
 # Noah-Manuel Michael
-# 06.05.2023
+# Created: 06.05.2023
+# Last updated: 12.05.2023
 # Experiments with decorators
 
 def my_first_decorator(original_function):

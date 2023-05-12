@@ -1,6 +1,7 @@
 # Noah-Manuel Michael
-# 06.05.2023
-# Rescore based on all possible parses and their scores
+# Created: 06.05.2023
+# Last updated: 12.05.2023
+# Rescore sentences based on all possible permutations and their parse scores
 
 import itertools
 import re
@@ -12,9 +13,10 @@ def load_sentences():
 
 	:return:
 	"""
+	...
 
 
-def main():
+def perform_rescoring_based_on_all_possible_permutations():
 	"""
 
 	:return:
@@ -47,7 +49,7 @@ def main():
 	myparser = parser.Parser(params)
 	myparser.stages[-1].estimator = 'rfe'
 
-	# store the probabilities of all parsers, as well as the rest of the results_bertje_detection and the sentences
+	# store the probabilities of all parsers, as well as the rest of the results and the sentences
 	result_probabilities = []
 	results_per_probability = {}
 	sentences_per_probability = {}
@@ -72,7 +74,6 @@ def main():
 	print(max_prob)
 	print(tree.DrawTree(max_result.parsetree, sent=max_sent))
 
-
 	# print(result)
 	# print(help(result[0]))
 	# print(result[0].parsetree)
@@ -83,4 +84,4 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+	perform_rescoring_based_on_all_possible_permutations()

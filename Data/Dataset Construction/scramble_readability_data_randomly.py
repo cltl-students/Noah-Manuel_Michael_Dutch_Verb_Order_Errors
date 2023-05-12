@@ -1,6 +1,7 @@
 # Noah-Manuel Michael
 # 30.04.2023
-# Scramble the readability data
+# Last updated: 12.05.2023
+# Scramble the readability data randomly
 
 import pandas as pd
 import re
@@ -8,7 +9,7 @@ import spacy
 import random
 
 
-def main():
+def scramble_readability_data():
     """
 
     :return:
@@ -115,4 +116,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    scramble_readability_data()

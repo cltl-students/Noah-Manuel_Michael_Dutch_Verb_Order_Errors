@@ -1,9 +1,14 @@
+# Noah-Manuel Michael
+# Created: 30.04.2023
+# Last updated: 12.05.2023
+# Preprocess the readability data
+
 import pandas as pd
 import re
 from collections import defaultdict, Counter
 
 
-def main():
+def preprocess_readability_corpus():
     """
 
     :return:
@@ -56,4 +61,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    preprocess_readability_corpus()

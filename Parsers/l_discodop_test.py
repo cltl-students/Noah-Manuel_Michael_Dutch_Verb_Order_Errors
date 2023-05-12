@@ -1,14 +1,19 @@
 # Noah-Manuel Michael
-# 06.05.2023
+# Created: 15.04.2023
+# Last updated: 12.05.2023
 # Clean construction of discodop trees and probabilities
 
 from discodop import parser, tree
 import pandas as pd
 
 
-def main():
-	df = pd.read_csv('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Data/leerder_annotated_data.tsv', sep='\t',
-					 keep_default_na=False)
+def get_probability_and_draw_tree_discodop():
+	"""
+
+	:return:
+	"""
+	df = pd.read_csv('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Data/leerder_annotated_data.tsv',
+					 sep='\t', keep_default_na=False)
 	sentence_list = df['Corrected'].tolist()
 
 	top = 'ROOT'  # the root label in the treebank
@@ -35,4 +40,4 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+	get_probability_and_draw_tree_discodop()

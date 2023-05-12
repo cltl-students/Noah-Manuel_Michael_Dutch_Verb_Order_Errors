@@ -1,12 +1,17 @@
 # Noah-Manuel Michael
-# 06.05.2023
+# Created: 15.04.2023
+# Last updated: 12.05.2023
 # Frog parser
 
 from frog import Frog, FrogOptions
 import pandas as pd
 
 
-def main():
+def parse_with_frog_and_get_chunks():
+    """
+
+    :return:
+    """
     # df = pd.read_csv('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Data/leerder_annotated_data.tsv',
     #                  sep='\t', keep_default_na=False)
     #
@@ -47,4 +52,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    parse_with_frog_and_get_chunks()

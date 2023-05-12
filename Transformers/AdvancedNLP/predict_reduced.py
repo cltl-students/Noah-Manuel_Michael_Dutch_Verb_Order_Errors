@@ -56,7 +56,7 @@ def make_predictions_with_finetuned_model(batch_size: int = 4, load_epoch: int =
         results, preds_list = utils.evaluate_bert_model(prediction_dataloader, model, tokenizer,
                                                         index2label, PAD_TOKEN_LABEL_ID, full_report=True, mode=mode)
 
-        print("Test Loss: {0:.2f}".format(results['loss']))
+        print("Tests Loss: {0:.2f}".format(results['loss']))
         print("Precision: {0:.2f} || Recall: {1:.2f} || F1: {2:.2f}".format(results['precision'] * 100,
                                                                             results['recall'] * 100,
                                                                             results['f1'] * 100))

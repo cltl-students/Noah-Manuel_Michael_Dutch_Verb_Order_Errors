@@ -15,7 +15,7 @@ tokenizer = BertTokenizer.from_pretrained('GroNLP/bert-base-dutch-cased')
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 
-# Test sentence
+# Tests sentence
 sentence = "Ik dat meisje weet bent je een."
 
 # Tokenize and create input tensors
