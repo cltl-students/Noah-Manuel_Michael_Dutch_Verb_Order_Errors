@@ -6,7 +6,7 @@ import random
 import itertools
 import re
 
-with open('Data/short_story.txt') as infile:
+with open('../Test/short_story.txt') as infile:
     sentences = []
     for line in infile.readlines():
         print(line)

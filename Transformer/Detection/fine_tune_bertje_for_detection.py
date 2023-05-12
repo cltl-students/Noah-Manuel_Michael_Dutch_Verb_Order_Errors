@@ -16,7 +16,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 from transformers import Trainer, TrainingArguments
 from utils_detection import SequenceClassificationDataset
 
-df = pd.read_csv('../../Dataset Construction/scrambled_data.tsv', sep='\t', header=0, encoding='utf-8')
+df = pd.read_csv('../../Data/Dataset Construction/Data/scrambled_data.tsv', sep='\t', header=0, encoding='utf-8')
 
 # num_labels = 2
 tokenizer = BertTokenizer.from_pretrained('GroNLP/bert-base-dutch-cased')

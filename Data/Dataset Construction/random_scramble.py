@@ -14,7 +14,7 @@ def main():
     :return:
     """
     # read in the original texts from the readability corpus
-    df_texts = pd.read_csv('dataset_cefr_dutch_preprocessed.tsv', sep='\t', header=0, encoding='utf-8')
+    df_texts = pd.read_csv('Data/dataset_cefr_dutch_preprocessed.tsv', sep='\t', header=0, encoding='utf-8')
 
     # instantiate pipeline
     nlp = spacy.load('nl_core_news_sm')
