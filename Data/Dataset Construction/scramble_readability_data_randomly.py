@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 30.04.2023
-# Last updated: 16.05.2023
+# Last updated: 18.05.2023
 # Scramble the readability data randomly
 
 import pandas as pd
@@ -11,8 +11,12 @@ import random
 
 def scramble_readability_data():
     """
-
-    :return:
+    Read in the preprocessed readability corpus data (texts). Split the texts into sentences. Save different versions of
+    the sentences in a new file.
+    Sentence types:
+    original - original with spaced punctuation - original with no punctuation - scrambled - scrambled with final
+    punctuation - scrambled with no punctuation
+    :return: None
     """
     # read in the original texts from the readability corpus
     df_texts = pd.read_csv('Data/readability_corpus_edia_preprocessed.tsv', sep='\t', header=0, encoding='utf-8')
@@ -37,11 +41,13 @@ def scramble_readability_data():
     df_orig = pd.DataFrame(list_of_all_sentences, columns=['original'])
     df_orig['level'] = list_of_all_levels
 
-    # save the original sentence but insert a space before the final punctuation token in order to ensure uniform
-    # tokenization by the transformer tokenizers
+    # save the original sentence but insert a space before punctuation tokens in order to ensure uniform tokenization by
+    # the transformer tokenizers
     orig_sentences_spaced_punc = []
 
-    for sent in df_orig['original']:
+    for sent in df_orig['original'].tolist():
+        if ', ' in sent:
+            sent = re.sub(r', ', ' , ', sent)
         if sent.endswith('.'):
             orig_sentences_spaced_punc.append(re.sub(r'\.$', ' .', sent))
         elif sent.endswith('?'):
@@ -55,55 +61,39 @@ def scramble_readability_data():
 
     # save the original sentence with no punctuation
     orig_sentences_no_punc = []
-    for sent in df_orig['original']:
+    for sent in df_orig['original'].tolist():
         orig_sentences_no_punc.append(re.sub(r'[.?!,;]', '', sent))
     df_orig['original_no_punc'] = orig_sentences_no_punc
-
-    # tokenize sentence, scramble randomly
-    sentences_for_scramble = df_orig['original'].tolist()
 
     # define lists to store the scrambled sentences in
     all_sentences_tokenized_scrambled = []
     all_sentences_tokenized_scrambled_punctuation_final = []
     all_sentences_tokenized_scrambled_no_punc = []
 
-    for sent in sentences_for_scramble:
+    for sent in df_orig['original'].tolist():
         # add empty spaces before and after commas, so they are recognized as tokens of their own
         if ', ' in sent:
             sent = re.sub(r', ', ' , ', sent)
-
         # check for punctuation marks at the end of sentences, tokenize the sentences, append shuffled sentences to list
-        # dot
-        if sent.endswith('.'):
+        if sent.endswith('.'):  # full stop
             sent = re.sub(r'\.', ' .', sent).split()
             random.shuffle(sent)
             all_sentences_tokenized_scrambled.append([tok for tok in sent])  # randomly shuffled
             sent.remove('.')
             all_sentences_tokenized_scrambled_punctuation_final.append(sent + ['.'])  # randomly shuffled, punctuation
             # at the end is preserved
-
-        # question mark
-        elif sent.endswith('?'):
+        elif sent.endswith('?'):  # question mark
             sent = re.sub(r'\?', ' ?', sent).split()
             random.shuffle(sent)
             all_sentences_tokenized_scrambled.append([tok for tok in sent])
             sent.remove('?')
             all_sentences_tokenized_scrambled_punctuation_final.append(sent + ['?'])
-
-        # exclamation mark
         elif sent.endswith('!'):
             sent = re.sub(r'!', ' !', sent).split()
             random.shuffle(sent)
             all_sentences_tokenized_scrambled.append([tok for tok in sent])
             sent.remove('!')
             all_sentences_tokenized_scrambled_punctuation_final.append(sent + ['!'])
-
-        # no final punctuation
-        else:
-            sent = sent.split()
-            random.shuffle(sent)
-            all_sentences_tokenized_scrambled.append([tok for tok in sent])
-            all_sentences_tokenized_scrambled_punctuation_final.append(sent)
 
         # remove all punctuation and save the shuffled sentences
         all_sentences_tokenized_scrambled_no_punc.append([tok for tok in sent if tok not in [',', '.', '!', '?', ';']])

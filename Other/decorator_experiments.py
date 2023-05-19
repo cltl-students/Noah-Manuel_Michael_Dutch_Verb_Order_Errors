@@ -55,3 +55,6 @@ get_weight_in_kg(stupid_measurements['weight_in_g'])
 
 print('proper measurements after adding stupid measurements with decorators:')
 print(proper_measurements)
+
+# how to format strings:
+# print(f'{token["text"]:15}{token["chunker"]:15}{token["pos"]}')
