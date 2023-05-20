@@ -32,3 +32,4 @@
 /Transformers/Detection/BERTje/results_bertje_detection/checkpoint-26/training_args.bin
 /Transformers/Detection/BERTje/results_bertje_detection/checkpoint-39/training_args.bin
 /Data/Annotation/Data/leerder_corpus_KU_preprocessed.tsv
+/Data/Dataset Construction/verb_position_permutations_test.py

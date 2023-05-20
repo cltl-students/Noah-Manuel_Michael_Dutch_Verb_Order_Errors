@@ -1,13 +1,12 @@
 # Noah-Manuel Michael
 # Created: 11.05.2023
-# Last updated: 12.05.2023
+# Last updated: 19.05.2023
 # https://colab.research.google.com/github/huggingface/notebooks/blob/main/examples/text_classification.ipynb
 # Fine-tune RobBERT for incorrect word order detection (complete random scramble, only one set of scrambled or many
 # different sets of scrambled tokens from the same sentence)
 # Try to fine-tune on only verbs scrambled for incorrect verb order detection, one sentence can be used to train as many
 # times as there are permutations for the verbs
 # For now, first attempt to fine tune with one set of randomly scrambled sentences
-
 # First fine-tune a model for classification
 # Next step will be to modify the data creation
 
@@ -16,7 +15,8 @@ from transformers import BertTokenizer, BertForSequenceClassification
 from transformers import Trainer, TrainingArguments
 from utils_bertje_detection import SequenceClassificationDataset
 
-df = pd.read_csv('../../../Data/Dataset Construction/Data/readability_data_scrambled.tsv', sep='\t', header=0, encoding='utf-8')
+df = pd.read_csv('../../../Data/Dataset Construction/Data/readability_data_scrambled.tsv', sep='\t', header=0,
+                 encoding='utf-8')
 
 # num_labels = 2
 tokenizer = BertTokenizer.from_pretrained('GroNLP/bert-base-dutch-cased')
