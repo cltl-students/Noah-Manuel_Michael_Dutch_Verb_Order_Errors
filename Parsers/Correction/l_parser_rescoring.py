@@ -74,6 +74,8 @@ def perform_rescoring_based_on_all_possible_permutations():
 	print(max_prob)
 	print(tree.DrawTree(max_result.parsetree, sent=max_sent))
 
+	# takes forever with long sentences
+
 	# print(result)
 	# print(help(result[0]))
 	# print(result[0].parsetree)

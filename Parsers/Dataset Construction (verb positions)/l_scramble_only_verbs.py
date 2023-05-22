@@ -1,12 +1,15 @@
 # Noah-Manuel Michael
-# Created: 18.05.2023
-# Last updated: 20.05.2023
-# Permute only verb positions in data
+# Created: 20.05.2023
+# Last updated: 21.05.2023
+# Permute only verb positions in data for dataset creation
 
 import re
 import random
 import pandas as pd
 from frog import Frog, FrogOptions
+
+# TO-DO: make sure punctuation is not the only thing that was scrambled since when removing punc, there is no difference
+# between the original and the scrambled sentence in that case
 
 
 def shuffle_only_verb_positions():
@@ -20,7 +23,6 @@ def shuffle_only_verb_positions():
     frog = Frog(FrogOptions(parser=True))
 
     all_scrambled_sents = []
-    all_scrambled_sents_final_punc = []
     all_scrambled_sents_no_punc = []
     df_filter = []
 
@@ -68,13 +70,16 @@ def shuffle_only_verb_positions():
                 cleaned_sent = re.sub(r' {}'.format(re.escape(char)), char, cleaned_sent)
 
             all_scrambled_sents.append(cleaned_sent)
+            all_scrambled_sents_no_punc.append(re.sub(r'[.,!?;:]', '', cleaned_sent))
             df_filter.append(True)
 
         else:
             all_scrambled_sents.append('')
+            all_scrambled_sents_no_punc.append('')
             df_filter.append(False)
 
     df['verbs_scrambled_final_punc'] = all_scrambled_sents
+    df['verbs_scrambled_no_punc'] = all_scrambled_sents_no_punc
     df_new = df.loc[df_filter]  # filter df for only those sentences where the tokenizer was able to find a verb
 
     df_new.to_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/Data/'

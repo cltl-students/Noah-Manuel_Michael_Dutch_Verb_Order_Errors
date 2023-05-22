@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 18.05.2023
-# Last updated: 20.05.2023
+# Last updated: 22.05.2023
 # Permute only verb positions in data
 
 import re
@@ -25,9 +25,8 @@ def permute_only_verb_positions():
     for sent in sentence_list:
         output = frog.process(sent)
 
-        sentence_length = len(output)
-
-        print(sentence_length)
+        # sentence_length = len(output)
+        # print(sentence_length)
 
         full_sentence = []
         masked_sentence = []
@@ -35,17 +34,19 @@ def permute_only_verb_positions():
         all_permutations = []
 
         for token in output:
-            full_sentence.append(token['text'])
-            if re.findall(r'.-VP', token['chunker']):
+            full_sentence.append(token['text'])  # get the full tokenized sentence
+            if re.findall(r'.-VP', token['chunker']):  # get only the verbs in the sentence
                 masked_sentence.append(token['text'])
             else:
-                masked_sentence.append(0)
+                masked_sentence.append(0)  # fill the rest with a placeholder
 
-        print(masked_sentence)
-        print(full_sentence)
+        # print(masked_sentence)
+        # print(full_sentence)
 
+        # get all possible unique permutations of the masked sentence
         permutations_of_masked_sentence = {permutation for permutation in permutations(masked_sentence)}
 
+        # fill the masked tokens with the non-verb tokens in correct order
         for permutation in permutations_of_masked_sentence:
             cache = [token for i, token in enumerate(full_sentence) if token != masked_sentence[i]]
             permutation = list(permutation)
@@ -56,6 +57,8 @@ def permute_only_verb_positions():
             all_permutations.append(permutation)
 
         print(all_permutations)
+
+        # takes forever with long sentences
 
 
 if __name__ == '__main__':
