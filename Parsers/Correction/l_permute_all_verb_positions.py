@@ -14,7 +14,7 @@ def permute_only_verb_positions():
     :return: None
     """
     sentence_list = []
-    with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Tests/parser_test_sents.txt') as infile:
+    with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Unpermuted Datasets/Tests/parser_test_sents.txt') as infile:
         for line in infile.readlines():
             sentence_list.append(line.strip('\n'))
 

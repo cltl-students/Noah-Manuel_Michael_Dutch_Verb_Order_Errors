@@ -17,7 +17,7 @@ LongTensor = torch.LongTensor
 device = torch.device("cpu")
 
 
-##### Data Loading Functions #####
+##### Unpermuted Datasets Loading Functions #####
 def wordpieces_to_tokens(wordpieces: list, labelpieces: list = None) -> tuple[list, list]:
     """
 

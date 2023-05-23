@@ -43,8 +43,8 @@ def fine_tune_bert(epochs: int = 5, batch_size: int = 4, mode: str = 'token_type
     PAD_TOKEN_LABEL_ID = CrossEntropyLoss().ignore_index  # == -100, label ID for padded tokens
 
     # Define filepaths
-    TRAIN_DATA_PATH = "Data/mini_train.json"  # or path to full train set
-    DEV_DATA_PATH = "Data/mini_dev.json"  # or path to full train/dev set
+    TRAIN_DATA_PATH = "Unpermuted Datasets/mini_train.json"  # or path to full train set
+    DEV_DATA_PATH = "Unpermuted Datasets/mini_dev.json"  # or path to full train/dev set
     SAVE_MODEL_DIR = "saved_models/MY_BERT_SRL/"
     LABELS_FILENAME = f"{SAVE_MODEL_DIR}/label2index.json"
     LOSS_TRN_FILENAME = f"{SAVE_MODEL_DIR}/Losses_Train_{EPOCHS}.json"

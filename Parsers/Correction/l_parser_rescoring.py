@@ -22,7 +22,7 @@ def perform_rescoring_based_on_all_possible_permutations():
 	:return:
 	"""
 	# read in the sentences, turn them into a list, punctuation at the end of the sentence is its own token
-	with open('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Data/short_story.txt') as infile:
+	with open('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Unpermuted Datasets/short_story.txt') as infile:
 		sentences = []
 		for line in infile.readlines():
 			if line.endswith('.\n'):

@@ -1,7 +1,7 @@
 # Noah-Manuel Michael
 # Created: 04.04.2023
 # Last updated: 12.05.2023
-# Data reader for KU Leuven Corpus
+# Unpermuted Datasets reader for KU Leuven Corpus
 # Manual steps before using this script (ctrl+r):
 # 1. Replace all present '</tr>' with ''
 # 2. Replace all '<tr>' with '</tr><tr>'
@@ -18,7 +18,7 @@ def preprocess_leerder_data():
 
     :return:
     """
-    with open('Annotation/Data/leerder_corpus_KU.html', encoding='utf-8') as infile:
+    with open('Annotation/Unpermuted Datasets/leerder_corpus_KU.html', encoding='utf-8') as infile:
         html = infile.read()
 
     soup = BeautifulSoup(html, 'html.parser')
@@ -51,7 +51,7 @@ def preprocess_leerder_data():
 
     df = pd.DataFrame.from_dict(df_dictionary)
 
-    df.to_csv('Annotation/Data/leerder_corpus_KU_preprocessed.tsv', sep='\t', header=True, index=True,
+    df.to_csv('Annotation/Unpermuted Datasets/leerder_corpus_KU_preprocessed.tsv', sep='\t', header=True, index=True,
               index_label='Index', encoding='utf-8')
 
 

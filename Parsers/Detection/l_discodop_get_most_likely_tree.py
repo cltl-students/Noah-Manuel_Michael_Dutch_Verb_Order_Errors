@@ -17,7 +17,7 @@ def get_most_likely_parse():
 	sentence_list = []
 	parse_list = []
 
-	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/Data/lassy_sents.txt') as infile:
+	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Unpermuted Datasets/Dataset Construction/Unpermuted Datasets/lassy_sents.txt') as infile:
 		for line in infile.readlines():
 			sentence_list.append(line.strip())
 
@@ -55,7 +55,7 @@ def get_most_likely_parse():
 	df = pd.DataFrame(sentence_list, columns=['original'])  # store sentences and
 	df['parse'] = parse_list  # corresponding most likely parses in a df
 
-	df.to_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/Data/lassy_sents_parsed.tsv',
+	df.to_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Unpermuted Datasets/Dataset Construction/Unpermuted Datasets/lassy_sents_parsed.tsv',
 			  sep='\t', index_label='index', index=True, encoding='utf-8')  # write to file
 
 	# Available attributes: dict_keys(['name', 'parsetree', 'prob', 'parsetrees', 'fragments', 'noparse', 'elapsedtime',
