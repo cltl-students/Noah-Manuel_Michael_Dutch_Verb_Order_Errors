@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 23.05.2023
-# Last updated: 23.05.2023
+# Last updated: 24.05.2023
 # Preprocess the wainot data
 # This script was pair-programmed with ChatGPT (v4)
 
@@ -12,6 +12,10 @@ from bs4 import BeautifulSoup
 
 
 def preprocess_wainot_corpus():
+    """
+
+    :return:
+    """
     wainot_data = []
 
     file_list = glob.glob('../Unpermuted Datasets/wainot_corpus/*.xml')

@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 21.05.2023
-# Last updated: 23.05.2023
+# Last updated: 24.05.2023
 # Get Lasssy small sentences for dataset construction
 
 import glob
@@ -9,6 +9,10 @@ import pandas as pd
 
 
 def preprocess_lassy_corpus():
+    """
+
+    :return:
+    """
     lassy_sents = []
 
     file_list = glob.glob('../Unpermuted Datasets/lassy_corpus/*.sents')
