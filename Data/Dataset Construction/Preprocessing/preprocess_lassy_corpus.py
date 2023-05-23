@@ -11,7 +11,7 @@ import pandas as pd
 def preprocess_lassy_corpus():
     lassy_sents = []
 
-    file_list = glob.glob('../Tests/lassy_corpus/*.sents')
+    file_list = glob.glob('../Unpermuted Datasets/lassy_corpus/*.sents')
 
     for file in file_list:
         with open(f'{file}', encoding='utf-8') as infile:
@@ -34,7 +34,7 @@ def preprocess_lassy_corpus():
 
     df = pd.DataFrame(lassy_sents_no_spaces, columns=['original'])
 
-    df.to_csv('Unpermuted Datasets/lassy_data.tsv', sep='\t', index_label='index', encoding='utf-8')
+    df.to_csv('../Unpermuted Datasets/lassy_data.tsv', sep='\t', index_label='index', encoding='utf-8')
 
 
 if __name__ == '__main__':

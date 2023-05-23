@@ -16,7 +16,7 @@ def preprocess_readability_corpus():
     :return: None
     """
     # read in the original dataset
-    df = pd.read_csv('../Unpermuted Datasets/readability_corpus_edia_original.csv', sep=',', header=0, encoding='utf-8')
+    df = pd.read_csv('../Unpermuted Datasets/edia_readability_corpus.csv', sep=',', header=0, encoding='utf-8')
 
     # get rid of new line characters and double spaces
     all_texts = [re.sub(r'\n', ' ', text) for text in df['text_plain']]
@@ -80,7 +80,7 @@ def preprocess_readability_corpus():
     df_sents = pd.DataFrame(list_of_all_sentences, columns=['original'])
     df_sents['level'] = list_of_all_levels
 
-    df_sents.to_csv('Unpermuted Datasets/readability_data.tsv', sep='\t', header=True, encoding='utf-8',
+    df_sents.to_csv('../Unpermuted Datasets/readability_data.tsv', sep='\t', header=True, encoding='utf-8',
                     index_label='index')
     print('Sents and corresponding levels saved to file.')
 
