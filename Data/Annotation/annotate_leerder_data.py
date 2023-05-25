@@ -16,7 +16,7 @@ def annotate_leerder_data():
                      keep_default_na=False)
 
     if 'leerder_annotated_data.tsv' not in os.listdir('Data'):
-        with open('Annotation/Unpermuted Datasets/leerder_annotated_data.tsv', 'w') as outfile:
+        with open('Annotation/Unpermuted_Datasets/leerder_annotated_data.tsv', 'w') as outfile:
             outfile.write('Index\tLevel\tLanguage\tSentence\tNormalized\tCorrected\tClause_type\tVerb_type\t'
                           'Error_type\tClause_structure\tConfidence\n')
 

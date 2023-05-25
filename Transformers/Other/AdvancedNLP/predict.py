@@ -33,7 +33,7 @@ def make_predictions_with_finetuned_model(batch_size: int = 4, load_epoch: int =
     SEQ_MAX_LEN = 256
     BATCH_SIZE = batch_size
 
-    TEST_DATA_PATH = "Unpermuted Datasets/mini_test.json"  # or path to full test set
+    TEST_DATA_PATH = "Unpermuted_Datasets/mini_test.json"  # or path to full test set
     MODEL_DIR = "saved_models/MY_BERT_SRL/"
     LOAD_EPOCH = load_epoch
     INPUTS_PATH = f"{MODEL_DIR}/EPOCH_{LOAD_EPOCH}/model_inputs.txt"

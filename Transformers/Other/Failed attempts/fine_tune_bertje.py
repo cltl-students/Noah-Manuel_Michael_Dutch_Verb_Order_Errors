@@ -12,7 +12,7 @@ from torch.optim import AdamW
 from utils_bertje import TokenReorganizer, masked_accuracy, masked_cross_entropy_loss, validate, get_input_ids, \
     get_pointer_labels, get_attention_masks, predict_reordered_sequence
 
-df = pd.read_csv('../../../Data/Dataset Construction/Permuted Datasets/readability_data_shufled.tsv', sep='\t', header=0, encoding='utf-8')
+df = pd.read_csv('../../../Data/Dataset_Construction/Permuted Datasets/readability_data_shufled.tsv', sep='\t', header=0, encoding='utf-8')
 
 inputs = df['scrambled'][:10].tolist()
 targets = df['original'][:10].tolist()

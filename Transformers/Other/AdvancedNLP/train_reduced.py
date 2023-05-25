@@ -36,7 +36,7 @@ def fine_tune_bert(epochs: int = 5, batch_size: int = 4, mode: str = 'token_type
     PAD_TOKEN_LABEL_ID = CrossEntropyLoss().ignore_index  # == -100, label ID for padded tokens
 
     # Define filepaths
-    TRAIN_DATA_PATH = "Unpermuted Datasets/mini_test.json"
+    TRAIN_DATA_PATH = "Unpermuted_Datasets/mini_test.json"
     LABELS_FILENAME = "saved_models/MY_BERT_SRL/label2index.json"
 
     # Initialize Random seeds and validate if there's a GPU available...

@@ -12,14 +12,14 @@ def extract_sentences_from_leerder_data():
 
     :return:
     """
-    df = pd.read_csv('Annotation/Unpermuted Datasets/leerder_corpus_KU_preprocessed.tsv', sep='\t', encoding='utf-8', header=0,
+    df = pd.read_csv('Annotation/Unpermuted_Datasets/leerder_corpus_KU_preprocessed.tsv', sep='\t', encoding='utf-8', header=0,
                      keep_default_na=False)
 
-    if 'leerder_erroneous_sentences.tsv' not in os.listdir('Annotation/Unpermuted Datasets'):
-        with open('Annotation/Unpermuted Datasets/leerder_erroneous_sentences.tsv', 'w') as outfile:
+    if 'leerder_erroneous_sentences.tsv' not in os.listdir('Annotation/Unpermuted_Datasets'):
+        with open('Annotation/Unpermuted_Datasets/leerder_erroneous_sentences.tsv', 'w') as outfile:
             outfile.write('Index\tLevel\tLanguage\tContent\tSentence\tErrors\tErroneous_words\tComment\n')
 
-    with open('Annotation/Unpermuted Datasets/leerder_erroneous_sentences.tsv', encoding='utf-8') as infile:
+    with open('Annotation/Unpermuted_Datasets/leerder_erroneous_sentences.tsv', encoding='utf-8') as infile:
         content = infile.readlines()
         if len(content) > 1:
             for line in content[1:]:
@@ -58,7 +58,7 @@ def extract_sentences_from_leerder_data():
         comment_no_new_lines = comment.replace('\n', ' ')
 
         if original_sentence != 'skip':
-            with open('Annotation/Unpermuted Datasets/leerder_erroneous_sentences.tsv', 'a', encoding='utf-8') as outfile:
+            with open('Annotation/Unpermuted_Datasets/leerder_erroneous_sentences.tsv', 'a', encoding='utf-8') as outfile:
                 outfile.write(f'{index}\t{level}\t{language}\t{content}\t{original_sentence}\t'
                               f'{errors_no_new_lines}\t{erroneous_words}\t{comment_no_new_lines}\n')
 

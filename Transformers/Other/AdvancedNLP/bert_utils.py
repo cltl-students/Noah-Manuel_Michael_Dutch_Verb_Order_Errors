@@ -44,7 +44,7 @@ device, USE_CUDA = get_torch_device(verbose=False)
 LongTensor = torch.cuda.LongTensor if USE_CUDA else torch.LongTensor
 
 
-##### Unpermuted Datasets Loading Functions #####
+##### Unpermuted_Datasets Loading Functions #####
 def wordpieces_to_tokens(wordpieces: list, labelpieces: list = None) -> tuple[list, list]:
     """
     Map word pieces and predicted labels back to the size of the original input and return the input and its prediction

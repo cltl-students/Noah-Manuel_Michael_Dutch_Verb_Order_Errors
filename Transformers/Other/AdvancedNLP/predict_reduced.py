@@ -29,7 +29,7 @@ def make_predictions_with_finetuned_model(batch_size: int = 4, load_epoch: int =
     PAD_TOKEN_LABEL_ID = CrossEntropyLoss().ignore_index  # -100
     LOAD_EPOCH = load_epoch
 
-    TEST_DATA_PATH = "Unpermuted Datasets/mini_test.json"
+    TEST_DATA_PATH = "Unpermuted_Datasets/mini_test.json"
     INPUTS_PATH = f"saved_models/MY_BERT_SRL/{LOAD_EPOCH}/model_inputs.txt"
     OUTPUTS_PATH = f"saved_models/MY_BERT_SRL/{LOAD_EPOCH}/model_outputs.txt"
 
