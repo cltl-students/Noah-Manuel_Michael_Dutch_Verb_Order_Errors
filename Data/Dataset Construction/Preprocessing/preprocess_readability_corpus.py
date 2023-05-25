@@ -16,7 +16,8 @@ def preprocess_readability_corpus():
     :return: None
     """
     # read in the original dataset
-    df = pd.read_csv('../Unpermuted Datasets/edia_readability_corpus.csv', sep=',', header=0, encoding='utf-8')
+    df = pd.read_csv('../Unpermuted Datasets/Originals/edia_readability_corpus.csv', sep=',', header=0,
+                     encoding='utf-8')
 
     # get rid of new line characters and double spaces
     all_texts = [re.sub(r'\n', ' ', text) for text in df['text_plain']]
@@ -61,7 +62,7 @@ def preprocess_readability_corpus():
     print('CEFR level for each text averaged.')
 
     # instantiate pipeline
-    nlp = spacy.load('nl_core_news_sm')
+    nlp = spacy.load('nl_core_news_lg')
 
     # retrieve a list of all sentences that are longer than 10 characters (otherwise mostly single words, not
     # interesting for word order

@@ -33,5 +33,6 @@
 /Transformers/Detection/BERTje/results_bertje_detection/checkpoint-39/training_args.bin
 /Data/Annotation/Data/leerder_corpus_KU_preprocessed.tsv
 /Other/verb_position_permutations_test.py
-/Data/Dataset Construction/Unpermuted Datasets/lassy_corpus/
-/Data/Dataset Construction/Unpermuted Datasets/wainot_corpus/
+/Data/Dataset Construction/Unpermuted Datasets/Originals/lassy_corpus/
+/Data/Dataset Construction/Unpermuted Datasets/Originals/wainot_corpus/
+/Data/Dataset Construction/Unpermuted Datasets/Originals/leipzig_corpus/

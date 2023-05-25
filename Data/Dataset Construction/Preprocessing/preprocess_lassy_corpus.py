@@ -15,7 +15,7 @@ def preprocess_lassy_corpus():
     """
     lassy_sents = []
 
-    file_list = glob.glob('../Unpermuted Datasets/lassy_corpus/*.sents')
+    file_list = glob.glob('../Unpermuted Datasets/Originals/lassy_corpus/*.sents')
 
     for file in file_list:
         with open(f'{file}', encoding='utf-8') as infile:

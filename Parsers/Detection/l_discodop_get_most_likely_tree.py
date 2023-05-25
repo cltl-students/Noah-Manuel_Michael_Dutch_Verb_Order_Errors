@@ -1,9 +1,11 @@
 # Noah-Manuel Michael
 # Created: 15.04.2023
-# Last updated: 21.05.2023
+# Last updated: 24.05.2023
 # Get the most likely parse for each sentence
 
 import re
+import os
+
 import pandas as pd
 from discodop import parser, tree
 
@@ -14,15 +16,11 @@ def get_most_likely_parse():
 	format to a file.
 	:return: None
 	"""
-	sentence_list = []
+	df_train = pd.read_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/'
+						   'Unpermuted Datasets/train.tsv', sep='\t', encoding='utf-8', header=0)
+
+	sentence_list = df_train['original'].tolist()
 	parse_list = []
-
-	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Unpermuted Datasets/Dataset Construction/Unpermuted Datasets/lassy_sents.txt') as infile:
-		for line in infile.readlines():
-			sentence_list.append(line.strip())
-
-	sentence_list = [sent for sent in sentence_list if re.match(r'^[A-Z].*[.!?]$', sent)]  # take only sentences into
-	# account that start with a capital letter and end with [.?!]
 
 	# initiate parser
 	top = 'ROOT'  # the root label in the treebank
@@ -32,8 +30,23 @@ def get_most_likely_parse():
 	myparser = parser.Parser(params)
 	myparser.stages[-1].estimator = 'rfe'
 
-	progress_tracker = 0
-	for sent in sentence_list:
+	# begin = int()
+	# if 'lassy_sents_parsed.tsv' not in os.listdir('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset '
+	# 											  'Construction/Data/'):
+	# 	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/Data/lassy_sents_parsed.tsv',
+	# 		  	  'w', encoding='utf-8') as outfile:
+	# 		outfile.write('index\toriginal\tparse\n')
+	# else:
+	# 	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/Data/lassy_sents_parsed.tsv',
+	# 		  	  encoding='utf-8') as infile:
+	# 		for line in infile.readlines():
+	# 			begin = line.split()[0]
+
+	for i, sent in enumerate(sentence_list):
+	# for i, sent in enumerate(sentence_list[int(begin)+1:]):
+	# 	if len(sent.split()) >= 30:  # too long sentences can't be processed
+	# 		continue
+	# 	i = i+int(begin)+1
 		probs_of_all_results = []
 		prob_to_tree = {}
 		result = list(myparser.parse(sent.split()))  # parse
@@ -46,17 +59,9 @@ def get_most_likely_parse():
 		max_parse = prob_to_tree[max_prob]  # retrieve the parsetree with the highest probability
 		parse_list.append(str(max_parse))
 
-		progress_tracker += 1
-		if progress_tracker % 1000 != 0:
-			pass
-		else:
-			print(f'Sentence {progress_tracker} has been processed.')
-
-	df = pd.DataFrame(sentence_list, columns=['original'])  # store sentences and
-	df['parse'] = parse_list  # corresponding most likely parses in a df
-
-	df.to_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Unpermuted Datasets/Dataset Construction/Unpermuted Datasets/lassy_sents_parsed.tsv',
-			  sep='\t', index_label='index', index=True, encoding='utf-8')  # write to file
+		with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Parsers/Detection/train_parsed.tsv', 'a',
+				  encoding='utf-8') as outfile:
+			outfile.write(f'{i}\t{sent}\t{str(max_parse)}\n')
 
 	# Available attributes: dict_keys(['name', 'parsetree', 'prob', 'parsetrees', 'fragments', 'noparse', 'elapsedtime',
     # 'numitems', 'golditems', 'totalgolditems', 'msg'])

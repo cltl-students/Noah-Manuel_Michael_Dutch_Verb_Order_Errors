@@ -18,7 +18,7 @@ def preprocess_wainot_corpus():
     """
     wainot_data = []
 
-    file_list = glob.glob('../Unpermuted Datasets/wainot_corpus/*.xml')
+    file_list = glob.glob('../Unpermuted Datasets/Originals/wainot_corpus/*.xml')
 
     # Read the XML files
     for file in file_list:
@@ -39,7 +39,7 @@ def preprocess_wainot_corpus():
                 wainot_data.append(p_text.strip())
 
     # use spacy to perform sent tokenize
-    nlp = spacy.load('nl_core_news_sm')
+    nlp = spacy.load('nl_core_news_lg')
 
     wainot_sents = []
 
