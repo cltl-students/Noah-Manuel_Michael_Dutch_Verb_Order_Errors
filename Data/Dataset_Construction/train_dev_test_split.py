@@ -31,7 +31,10 @@ def check_if_verb_in_sent(spacy_pipeline, sents):
 
 def get_datasplit():
     """
-
+    Read in all the datasets. Make test dataset from edia data only - aiming to approximate the levels seen in the
+    actual learner data. Use the sentences that are outside the learner level range for train and dev. Combine the
+    leftover sents plus all other datasets. Get a number of sentence % 10 == 0 for dev vs number of
+    sentence % 10 != 0 for train split.
     :return:
     """
     df_edia = pd.read_csv('readability_data.tsv', sep='\t', encoding='utf-8', header=0)

@@ -37,3 +37,5 @@
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/wainot_corpus/
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/leipzig_corpus/
 /Data/Dataset_Construction/Unpermuted_Datasets/leipzig_data.tsv
+/Data/Dataset_Construction/Unpermuted_Datasets/dev.tsv
+/Data/Dataset_Construction/Unpermuted_Datasets/train.tsv
