@@ -12,7 +12,7 @@ def extract_meta_data_from_leerder_data():
 
     :return:
     """
-    df = pd.read_csv('../Data/leerder_erroneous_sentences.tsv', sep='\t', keep_default_na=False)
+    df = pd.read_csv('../Data/leerder_annotated_data.tsv', sep='\t', keep_default_na=False)
 
     print(Counter(df['Language']))
 

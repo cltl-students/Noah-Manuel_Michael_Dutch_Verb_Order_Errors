@@ -16,8 +16,8 @@ def get_most_likely_parse():
 	format to a file.
 	:return: None
 	"""
-	df_train = pd.read_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset_Construction/'
-						   'Unpermuted_Datasets/train.tsv', sep='\t', encoding='utf-8', header=0)
+	df_train = pd.read_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/'
+						   'Unpermuted Datasets/train.tsv', sep='\t', encoding='utf-8', header=0)
 
 	sentence_list = df_train['original'].tolist()
 	parse_list = []
@@ -33,11 +33,11 @@ def get_most_likely_parse():
 	# begin = int()
 	# if 'lassy_sents_parsed.tsv' not in os.listdir('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset '
 	# 											  'Construction/Data/'):
-	# 	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset_Construction/Data/lassy_sents_parsed.tsv',
+	# 	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/Data/lassy_sents_parsed.tsv',
 	# 		  	  'w', encoding='utf-8') as outfile:
 	# 		outfile.write('index\toriginal\tparse\n')
 	# else:
-	# 	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset_Construction/Data/lassy_sents_parsed.tsv',
+	# 	with open('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset Construction/Data/lassy_sents_parsed.tsv',
 	# 		  	  encoding='utf-8') as infile:
 	# 		for line in infile.readlines():
 	# 			begin = line.split()[0]
