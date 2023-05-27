@@ -74,8 +74,8 @@ def shuffle_sentences_randomly():
         df_filtered.reset_index(drop=True, inplace=True)
 
         # write the df to file
-        df_filtered.to_csv(f'Unpermuted_Datasets/{split}.tsv', sep='\t', header=True, encoding='utf-8',
-                           index_label='index')
+        df_filtered.to_csv(f'Permuted_Datasets/{split}_shuffled_random_all.tsv', sep='\t', header=True,
+                           encoding='utf-8', index_label='index')
         print('Scrambled data saved to file.')
 
 

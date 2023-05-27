@@ -37,8 +37,8 @@
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/wainot_corpus/
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/leipzig_corpus/
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/leipzig_data.tsv
-/Data/Dataset_Construction/Unpermuted_Datasets/dev.tsv
-/Data/Dataset_Construction/Unpermuted_Datasets/train.tsv
+/Data/Dataset_Construction/Permuted_Datasets/dev_shuffled_random_all.tsv
+/Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all.tsv
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/leipzig_data.tsv
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/lassy_data.tsv
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/readability_data.tsv

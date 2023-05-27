@@ -90,11 +90,11 @@ def get_datasplit():
     df_train = pd.DataFrame([sent for i, sent in enumerate(combined_data) if i % 10 != 0], columns=['original'])
 
     df_test.to_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset_Construction/Unpermuted_Datasets/'
-                   'test.tsv', sep='\t', index_label='index', encoding='utf-8')
+                   'test_shuffled_random_all.tsv', sep='\t', index_label='index', encoding='utf-8')
     df_dev.to_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset_Construction/Unpermuted_Datasets/'
-                  'dev.tsv', sep='\t', index_label='index', encoding='utf-8')
+                  'dev_shuffled_random_all.tsv', sep='\t', index_label='index', encoding='utf-8')
     df_train.to_csv('/mnt/c/Users/nwork/OneDrive/Studium/ma_thesis/Data/Dataset_Construction/Unpermuted_Datasets/'
-                    'train.tsv', sep='\t', index_label='index', encoding='utf-8')
+                    'train_shuffled_random_all.tsv', sep='\t', index_label='index', encoding='utf-8')
 
 
 if __name__ == '__main__':
