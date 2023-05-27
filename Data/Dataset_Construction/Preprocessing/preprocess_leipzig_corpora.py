@@ -24,7 +24,7 @@ def preprocess_leipzig_corpora():
                  in (df_wiki['sent'].tolist() + df_mixed['sent'].tolist() + df_news['sent'].tolist())
                  if len(sent) > 10 and re.match(r'^[A-Z].*[.!?]$', sent)}
 
-    with open('../Unpermuted_Datasets/leipzig_data.tsv', 'w', encoding='utf-8') as outfile:
+    with open('../Unpermuted_Datasets/Originals/leipzig_data.tsv', 'w', encoding='utf-8') as outfile:
         outfile.write('index\toriginal\n')
         for i, sent in enumerate(all_sents):
             outfile.write(f'{i}\t{sent}\n')

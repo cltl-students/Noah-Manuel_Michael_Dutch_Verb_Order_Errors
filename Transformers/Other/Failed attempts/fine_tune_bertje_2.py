@@ -14,7 +14,7 @@ def main():
     model = BertforTokenReorganization.from_pretrained("GroNLP/bert-base-dutch-cased")
 
     dataset = SentenceReorderingDataset(
-        '../../../Data/Dataset_Construction/Permuted Datasets/readability_data_shufled.tsv', tokenizer)
+        '../../../Data/Dataset_Construction/Permuted_Datasets/readability_data_shufled.tsv', tokenizer)
     train_size = int(0.9 * len(dataset))
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = random_split(dataset, [train_size, val_size])

@@ -15,7 +15,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 from transformers import Trainer, TrainingArguments
 from tbd_utils_bertje_detection import SequenceClassificationDataset
 
-df = pd.read_csv('../../../Data/Dataset_Construction/Permuted Datasets/readability_data_shufled.tsv', sep='\t', header=0,
+df = pd.read_csv('../../../Data/Dataset_Construction/Permuted_Datasets/readability_data_shufled.tsv', sep='\t', header=0,
                  encoding='utf-8')
 
 # num_labels = 2

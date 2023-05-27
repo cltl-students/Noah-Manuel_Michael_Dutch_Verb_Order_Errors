@@ -30,13 +30,17 @@ def get_probability_and_draw_tree_discodop():
 			print(tree.DrawTree(res.parsetree, sent=sent.split()))
 			print('________________________')
 
-	# print(result)
+	# Available attributes: dict_keys(['name', 'parsetree', 'prob', 'parsetrees', 'fragments', 'noparse', 'elapsedtime',
+	# 'numitems', 'golditems', 'totalgolditems', 'msg'])
+
+	# print(results[0])
 	# print(help(result[0]))
 	# print(result[0].parsetree)
 	# print(result[0].golditems)
 	# print(result[0].msg)
 	# print(result[0].prob)
 	# print(result[0].parsetrees)
+	# print(tree.DrawTree(result[0].parsetree, sent=sent.split())
 
 
 if __name__ == '__main__':
