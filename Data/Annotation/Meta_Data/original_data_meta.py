@@ -8,10 +8,21 @@ import spacy
 from collections import Counter
 
 
-def get_sentence_length_distribution():
+def get_metadata_from_original_dataset():
     df = pd.read_csv('../Data/leerder_corpus_KU_preprocessed.tsv', sep='\t', encoding='utf-8', header=0)
 
+    print('Levels in the data:')
+    print(Counter(df['Level']))
+
     texts = {text for text in df['Content']}
+
+    print('Number of different texts in the data:')
+    print(len(texts))
+
+    print('Languages in the original data:')
+    print(len(set(df['Language'])))
+    for language in sorted(set(df['Language'])):
+        print(language)
 
     nlp = spacy.load('nl_core_news_lg')
 
@@ -27,7 +38,8 @@ def get_sentence_length_distribution():
     with open('sentence_length_distribution_in_original.txt', 'w') as outfile:
         for length, amount in distribution:
             outfile.write(f'{length}\t{amount}\n')
+    print('Distribution of sentence length saved in file for further processing.')
 
 
 if __name__ == '__main__':
-    get_sentence_length_distribution()
+    get_metadata_from_original_dataset()

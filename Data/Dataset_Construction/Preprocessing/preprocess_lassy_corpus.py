@@ -10,8 +10,9 @@ import pandas as pd
 
 def preprocess_lassy_corpus():
     """
-
-    :return:
+    Read in the lassy corpus from the original file. Remove the spaces between most common punctuation as we want the
+    tokenizing to be performed by spacy instead.
+    :return: None
     """
     lassy_sents = []
 
@@ -28,7 +29,7 @@ def preprocess_lassy_corpus():
     end_chars = [';', ':', '.', '?', '!', ',', ')', '\'', '"', '’', '”', '%']
 
     for sent in lassy_sents:
-        if len(sent) > 10 and re.match(r'^[A-Z].*[.!?]$', sent):
+        if len(sent) > 10 and re.match(r'^[A-Z].*[.!?]$', sent):  # avoid bulletpoints and other incomplete sentences
             for char in begin_chars:
                 sent = re.sub(r'{} '.format(re.escape(char)), char, sent)
             for char in end_chars:
