@@ -43,3 +43,5 @@
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/lassy_data.tsv
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/readability_data.tsv
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/wainot_data.tsv
+/Data/Dataset_Construction/Permuted_Datasets/dev_shuffled_random_all_and_verbs.tsv
+/Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all_and_verbs.tsv
