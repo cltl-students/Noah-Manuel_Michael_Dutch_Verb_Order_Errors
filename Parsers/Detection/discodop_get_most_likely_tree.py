@@ -1,11 +1,10 @@
 # Noah-Manuel Michael
 # Created: 15.04.2023
-# Last updated: 27.05.2023
+# Last updated: 01.06.2023
 # Get the most likely parse for each sentence
 # Script executed on SURF Research Cloud
+# I only parse the test set and about 75000 sents from the dev because of how long it takes to parse the sentences
 
-import re
-import os
 import pandas as pd
 from discodop import parser, tree
 
@@ -17,36 +16,51 @@ def get_most_likely_parse():
 	:return: None
 	"""
 	for split in ['test', 'dev', 'train']:
-		df = pd.read_csv(f'../{split}.tsv', sep='\t', encoding='utf-8', header=0)  # SURF
+		for datatype in ['spaced', 'scrambled', 'verbs_random_punc_final']:
 
-		parse_list = []
+			if datatype == 'spaced':
+				correctness = 'correct'
+			else:
+				correctness = 'incorrect'
 
-		# initiate parser
-		top = 'ROOT'  # the root label in the treebank
-		directory = '/home/nmichael/disco-dop/nl'  # SURF
-		params = parser.readparam(directory + '/params.prm')
-		parser.readgrammars(directory, params.stages, params.postagging, top=getattr(params, 'top', top))
-		myparser = parser.Parser(params)
-		myparser.stages[-1].estimator = 'rfe'
+			df = pd.read_csv(f'../{split}_shuffled_random_all_and_verbs.tsv', sep='\t', encoding='utf-8', header=0)
 
-		with open(f'../{split}_correct_parsed.tsv', 'w', encoding='utf-8') as outfile:  # SURF
-			outfile.write('index\tsentence\ttree\n')
+			parse_list = []
 
-		for i, sent in enumerate(df['spaced']):
-			probs_of_all_results = []
-			prob_to_tree = {}
-			result = list(myparser.parse(sent.split()))  # parse
+			# initiate parser
+			top = 'ROOT'  # the root label in the treebank
+			directory = '/home/nmichael/disco-dop/nl'  # SURF
+			params = parser.readparam(directory + '/params.prm')
+			parser.readgrammars(directory, params.stages, params.postagging, top=getattr(params, 'top', top))
+			myparser = parser.Parser(params)
+			myparser.stages[-1].estimator = 'rfe'
 
-			for res in result:
-				probs_of_all_results.append(res.prob)  # store the probability for each possible parse
-				prob_to_tree[res.prob] = res.parsetree  # map the probability to the corresponding parsetree
+			if datatype == 'verbs_random_punc_final':
+				with open(f'../{split}_{correctness}_verbs_parsed.tsv', 'w', encoding='utf-8') as outfile:  # SURF
+					outfile.write('index\tsentence\ttree\n')
+			else:
+				with open(f'../{split}_{correctness}_parsed.tsv', 'w', encoding='utf-8') as outfile:  # SURF
+					outfile.write('index\tsentence\ttree\n')
 
-			max_prob = max(probs_of_all_results)
-			max_parse = prob_to_tree[max_prob]  # retrieve the parsetree with the highest probability
-			parse_list.append(str(max_parse))
+			for i, sent in enumerate(df[datatype]):
+				probs_of_all_results = []
+				prob_to_tree = {}
+				result = list(myparser.parse(sent.split()))  # parse
 
-			with open(f'../{split}_correct_parsed.tsv', 'a', encoding='utf-8') as outfile:  # SURF
-				outfile.write(f'{i}\t{sent}\t{str(max_parse)}\n')
+				for res in result:
+					probs_of_all_results.append(res.prob)  # store the probability for each possible parse
+					prob_to_tree[res.prob] = res.parsetree  # map the probability to the corresponding parsetree
+
+				max_prob = max(probs_of_all_results)
+				max_parse = prob_to_tree[max_prob]  # retrieve the parsetree with the highest probability
+				parse_list.append(str(max_parse))
+
+				if datatype == 'verbs_random_punc_final':
+					with open(f'../{split}_{correctness}_verbs_parsed.tsv', 'a', encoding='utf-8') as outfile:  # SURF
+						outfile.write(f'{i}\t{sent}\t{str(max_parse)}\n')
+				else:
+					with open(f'../{split}_{correctness}_parsed.tsv', 'a', encoding='utf-8') as outfile:  # SURF
+						outfile.write(f'{i}\t{sent}\t{str(max_parse)}\n')
 
 
 if __name__ == '__main__':
