@@ -6,7 +6,7 @@
 import pandas as pd
 from collections import Counter
 
-df = pd.read_csv('Data/dev_correct_simplified.tsv', sep='\t', header=0, encoding='utf-8')
+df = pd.read_csv('Data/test_correct_simplified.tsv', sep='\t', header=0, encoding='utf-8')
 
 
 print('Num trees in original parses:')
