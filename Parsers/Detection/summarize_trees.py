@@ -83,9 +83,9 @@ def simplify_trees():
     Run the script to simplify the stree structures obtained from the disco-dop parser.
     :return: None
     """
-    for split in ['test']:  # , 'dev']:
-        for correctness in ['incorrect']:  # ['correct',
-            df = pd.read_csv(f'Data/{split}_{correctness}_verbs_parsed.tsv', encoding='utf-8', sep='\t', header=0)
+    for split in ['test', 'dev']:
+        for shuffle in ['C', 'AR', 'VR']:
+            df = pd.read_csv(f'Data/{split}_{shuffle}.tsv', encoding='utf-8', sep='\t', header=0)
             # remove verbs in path for all random shuffles
             simplified_trees = []
 
@@ -97,9 +97,9 @@ def simplify_trees():
                 simplified_trees.append(tree_str)
 
             df['simple_tree'] = simplified_trees
-            df.to_csv(f'Data/{split}_{correctness}_verbs_simplified.tsv', encoding='utf-8', sep='\t', index=False)
+            df.to_csv(f'Data/{split}_{shuffle}.tsv', encoding='utf-8', sep='\t', index=False)
 
-            print(f'{split.title()} data\'s {correctness} sentence trees simplified.')
+            print(f'{split.title()} data\'s {shuffle} sentence trees simplified.')
 
 
 if __name__ == '__main__':
