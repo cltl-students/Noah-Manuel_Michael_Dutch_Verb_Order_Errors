@@ -35,7 +35,8 @@ def get_metadata_from_original_dataset():
 
     distribution = sorted(Counter(lengths_of_sentences).items())
 
-    with open('sentence_length_distribution_in_original.txt', 'w') as outfile:
+    with open('sentence_length_distribution_in_original.tsv', 'w') as outfile:
+        outfile.write('SentenceLength\tSentenceCount\n')
         for length, amount in distribution:
             outfile.write(f'{length}\t{amount}\n')
     print('Distribution of sentence length saved in file for further processing.')

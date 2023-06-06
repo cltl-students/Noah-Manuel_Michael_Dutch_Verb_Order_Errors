@@ -8,13 +8,11 @@ import pandas as pd
 
 
 def get_tuples():
-    df_test = pd.read_csv('Data/test_C.tsv', encoding='utf-8', header=0, sep='\t')
-
-    tree_list = [t for t in df_test['simple_tree']]
+    test_C = pd.read_csv('Data/test_C.tsv', encoding='utf-8', header=0, sep='\t')
 
     tuple_lists = []
 
-    for tree in tree_list:
+    for tree in test_C['simple_tree']:
         token_tuples = []
         tree = re.sub(r'[(ROOT)\(\)]', '', tree)
         for i, token in enumerate(tree.split()):
