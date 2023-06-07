@@ -1,0 +1,55 @@
+# Noah-Manuel Michael
+# Created: 07.06.2023
+# Last updated: 07.06.2023
+# utils for parser experiments
+
+import json
+
+
+def read_in_json_data_and_convert_to_str_sequence(path, split, dataset, spacy=False):
+    """
+    Read in the tuple information from the json files. If the tuples were created with spacy, access the list of tuples
+    for each sentence via a key. Otherwise, access every line and obtain the list of tuples. Convert each tuple, which
+    is in list form, into a str sequence of the form 0_PoS. Join all tuples of a single sentence together into a str
+    sequence for further processing with CountVectorizer.
+    :param str path: path to directory
+    :param str split: train, dev, test
+    :param str dataset: AR, VR, C
+    :param bool spacy: False for access to tuples without key, True for access to tuples with key
+    :return: list json_data: a list of all tuple sequences for all sentences
+    """
+    json_data = []
+
+    with open(f'{path}_{split}_{dataset}.json') as infile:
+        content = infile.readlines()
+        for line in content:
+            sent_tuples = json.loads(line.strip())
+            if spacy:  # if processed with spacy on SURF the tuples are saved in a dictionary, so we have to access the
+                # values through the key
+                for key in ['spaced', 'scrambled_final_punc', 'verbs_random_punc_final']:
+                    try:  # retrieve the list of lists, join the tuples together to be of the form 0_PoS, then join
+                        # everything to be one str sequence
+                        json_data.append(' '.join([(str(tup[0]) + '_' + str(tup[1])) for tup in sent_tuples[key]]))
+                    except KeyError:
+                        continue
+            else:  # otherwise, each line is already the list of tuples
+                json_data.append(' '.join([(str(tup[0]) + '_' + str(tup[1])) for tup in sent_tuples]))
+
+    print(f'{split.title()} {dataset.upper()} tuples read in.')
+
+    return json_data
+
+
+def read_predictions(path):
+    """
+    Read predictions from a prediction file.
+    :param path:
+    :return:
+    """
+    with open(path) as infile:
+        list_of_predictions = []
+        content = infile.readlines()
+        for prediction in content:
+            list_of_predictions.append(prediction.strip())
+
+    return list_of_predictions

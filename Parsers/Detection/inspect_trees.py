@@ -7,7 +7,7 @@ import pandas as pd
 from collections import Counter
 
 # df_correct = pd.read_csv('Data/test_correct_verbs_simplified.tsv', sep='\t', header=0, encoding='utf-8')
-df_incorrect = pd.read_csv('Data/test_VR.tsv', sep='\t', header=0, encoding='utf-8')
+df_incorrect = pd.read_csv('Data/Trees/test_VR.tsv', sep='\t', header=0, encoding='utf-8')
 
 
 print('Num trees in original parses:')

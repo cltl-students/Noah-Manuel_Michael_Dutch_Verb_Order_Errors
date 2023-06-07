@@ -12,13 +12,13 @@ def experiment_1_basic_classification_from_pool():
 
     :return:
     """
-    df_dev_c = pd.read_csv('Data/dev_C.tsv', encoding='utf-8', sep='\t', header=0)
+    df_dev_c = pd.read_csv('Data/Trees/dev_C.tsv', encoding='utf-8', sep='\t', header=0)
 
     pool = {t for t in df_dev_c['tree']}
 
-    df_test_c = pd.read_csv('Data/test_C.tsv', encoding='utf-8', sep='\t', header=0)
-    df_test_ar = pd.read_csv('Data/test_AR.tsv', encoding='utf-8', sep='\t', header=0)
-    df_test_vr = pd.read_csv('Data/test_VR.tsv', encoding='utf-8', sep='\t', header=0)
+    df_test_c = pd.read_csv('Data/Trees/test_C.tsv', encoding='utf-8', sep='\t', header=0)
+    df_test_ar = pd.read_csv('Data/Trees/test_AR.tsv', encoding='utf-8', sep='\t', header=0)
+    df_test_vr = pd.read_csv('Data/Trees/test_VR.tsv', encoding='utf-8', sep='\t', header=0)
 
     # get the gold labels for each individual portion of the datasets
     c_labels_gold = ['correct' for _ in range(len(df_test_c))]

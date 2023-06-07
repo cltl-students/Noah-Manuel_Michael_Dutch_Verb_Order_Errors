@@ -45,3 +45,9 @@
 /Data/Dataset_Construction/Unpermuted_Datasets/Originals/wainot_data.tsv
 /Data/Dataset_Construction/Permuted_Datasets/dev_shuffled_random_all_and_verbs.tsv
 /Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all_and_verbs.tsv
+/Parsers/Detection/Data/Tuples/Spacy/tuple_data_spacy_train_VR.json
+/Parsers/Detection/Data/Tuples/Spacy/tuple_data_spacy_train_C.json
+/Parsers/Detection/Data/Tuples/Spacy/tuple_data_spacy_train_AR.json
+/Parsers/Detection/Data/Tuples/Spacy/tuple_data_spacy_dev_VR.json
+/Parsers/Detection/Data/Tuples/Spacy/tuple_data_spacy_dev_C.json
+/Parsers/Detection/Data/Tuples/Spacy/tuple_data_spacy_dev_AR.json
