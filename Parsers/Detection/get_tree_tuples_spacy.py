@@ -11,7 +11,7 @@ import argparse
 
 
 def get_tuples_with_spacy(dataset):
-    for split in ['train', 'dev', 'test']:
+    for split in ['train']:  # , 'dev', 'test']:
         train = pd.read_csv(f'{split}_shuffled_random_all_and_verbs.tsv',
                             encoding='utf-8', header=0, sep='\t')
 
@@ -23,9 +23,9 @@ def get_tuples_with_spacy(dataset):
                 doc = nlp(row[dataset])
                 for position, token in enumerate(doc):
                     token_tuples.append((position, token.pos_))
-                    with open(f'tuple_data_{split}_spacy_{dataset}.json', 'a') as outfile:
-                        json.dump({dataset: token_tuples}, outfile)
-                        outfile.write('\n')
+                with open(f'tuple_data_{split}_spacy_{dataset}.json', 'a') as outfile:
+                    json.dump({dataset: token_tuples}, outfile)
+                    outfile.write('\n')
             except ValueError:
                 continue
 
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
 
 # def get_tuples():
-#     train = pd.read_csv('train_shuffled_random_all_and_verbs.tsv',
+#     train = pd.read_csv('train_shuffled_random_all_and_verbs_old.tsv',
 #                         encoding='utf-8', header=0, sep='\t')
 #
 #     nlp = spacy.load('nl_core_news_lg')

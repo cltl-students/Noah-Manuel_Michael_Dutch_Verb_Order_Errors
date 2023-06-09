@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 03.06.2023
-# Last updated: 05.06.2023
+# Last updated: 09.06.2023
 # Unite the parsed data (executed several notebook in parallel in SURF)
 
 import pandas as pd
@@ -8,7 +8,8 @@ import pandas as pd
 
 def unite_parsed_tree_data():
     """
-
+    Unite the parsed dev files from SURF. Up to 20,000 sentences were processed in parallel (4x) resulting in 4
+    different files that need to be concatenated for the whole pool.
     :return:
     """
     for verbs in ['', '_verbs']:
