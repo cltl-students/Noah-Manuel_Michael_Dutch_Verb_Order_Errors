@@ -53,3 +53,6 @@
 /Parsers/Detection/Data/Tuples/Spacy/tuple_data_spacy_dev_AR.json
 /Data/Dataset_Construction/Unpermuted_Datasets/dev.tsv
 /Data/Dataset_Construction/Unpermuted_Datasets/train.tsv
+/Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all_and_verbs.tsv
+/Data/Dataset_Construction/Permuted_Datasets/dev_shuffled_random_all_and_verbs.tsv
+/Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all_and_verbs_sampled.tsv
