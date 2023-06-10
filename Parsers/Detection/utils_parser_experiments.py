@@ -28,7 +28,7 @@ def read_in_json_data_and_convert_to_str_sequence(path, split, dataset, spacy=Fa
             sent_tuples = json.loads(line.strip())
             if spacy:  # if processed with spacy on SURF the tuples are saved in a dictionary, so we have to access the
                 # values through the key
-                for key in ['spaced', 'scrambled_final_punc', 'verbs_random_punc_final']:
+                for key in ['no_punc', 'scrambled_no_punc', 'verbs_random_no_punc']:
                     try:  # retrieve the list of lists, join the tuples together to be of the form 0_PoS, then join
                         # everything to be one str sequence
                         json_data.append(' '.join([(str(tup[0]) + '_' + str(tup[1])) for tup in sent_tuples[key]]))
