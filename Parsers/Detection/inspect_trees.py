@@ -1,19 +1,30 @@
 # Noah-Manuel Michael
 # Created: 31.05.2023
-# Last updated: 04.06.2023
+# Last updated: 11.06.2023
 # Inspect to what extent simplifying the tree structures renders fewer unique trees
 
 import pandas as pd
 from collections import Counter
 
-# df_correct = pd.read_csv('Data/test_correct_verbs_simplified.tsv', sep='\t', header=0, encoding='utf-8')
-df_incorrect = pd.read_csv('Data/Trees/test_VR.tsv', sep='\t', header=0, encoding='utf-8')
+
+def get_num_of_unique_trees():
+    """
+
+    :return:
+    """
+    pool = pd.read_csv('Data/Trees/train_C.tsv', sep='\t', header=0, encoding='utf-8')
+    test_C = pd.read_csv('Data/Trees/test_C.tsv', sep='\t', header=0, encoding='utf-8')
+    test_AR = pd.read_csv('Data/Trees/test_AR.tsv', sep='\t', header=0, encoding='utf-8')
+    test_VR = pd.read_csv('Data/Trees/test_VR.tsv', sep='\t', header=0, encoding='utf-8')
+
+    for df in [pool, test_C, test_AR, test_VR]:
+        print('___')
+        print('Num trees in original parses:')
+        print(len(Counter(df['tree'])))
+
+        print('Num trees in simplified parses:')
+        print(len(Counter(df['simple_tree'])))
 
 
-print('Num trees in original parses:')
-print(len(Counter(df_incorrect['tree'])))
-
-print('Num trees in simplified parses:')
-print(len(Counter(df_incorrect['simple_tree'])))
-
-# Next step: write something to get tuples of (partofspeech, position) as input for classifier
+if __name__ == '__main__':
+    get_num_of_unique_trees()

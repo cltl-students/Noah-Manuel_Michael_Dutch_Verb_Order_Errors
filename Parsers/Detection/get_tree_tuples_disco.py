@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 06.06.2023
-# Last updated: 06.06.2023
+# Last updated: 11.06.2023
 # Extract tuples from parses as features for classifiers
 
 import re
@@ -9,7 +9,7 @@ import json
 
 
 def get_tuples_disco():
-    for split in ['test', 'dev']:
+    for split in ['test', 'train']:
         for dataset in ['C', 'AR', 'VR']:
             df = pd.read_csv(f'Data/Trees/{split}_{dataset}.tsv', encoding='utf-8', header=0, sep='\t')
 

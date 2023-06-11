@@ -15,12 +15,12 @@ def annotate_leerder_data():
     df = pd.read_csv('Data/leerder_erroneous_sentences.tsv', sep='\t', encoding='utf-8', header=0,
                      keep_default_na=False)
 
-    if 'leerder_annotated_data.tsv' not in os.listdir('Data'):
-        with open('Annotation/Unpermuted_Datasets/leerder_annotated_data.tsv', 'w') as outfile:
+    if 'leerder_annotated_data_clean.tsv' not in os.listdir('Data'):
+        with open('Annotation/Unpermuted_Datasets/leerder_annotated_data_clean.tsv', 'w') as outfile:
             outfile.write('Index\tLevel\tLanguage\tSentence\tNormalized\tCorrected\tClause_type\tVerb_type\t'
-                          'Error_type\tClause_structure\tConfidence\n')
+                          'Error_type\tClause_structure\tAnnotated\n')
 
-    with open('Data/leerder_annotated_data.tsv', encoding='utf-8') as infile:
+    with open('Data/leerder_annotated_data_clean.tsv', encoding='utf-8') as infile:
         content = infile.readlines()
         if len(content) > 1:
             for line in content[1:]:
@@ -61,17 +61,13 @@ def annotate_leerder_data():
                   f'{original_sentence}')
             print()
 
+            do_continue = input('Is there a verb order error in the sentence? [y/n]: ')
+            if do_continue == 'n':
+                continue
+
             corrected_sentence = input('Correct sentence: ')
             normalized_sentence = input('Error sentence:   ')
-            print('\n'
-                  '0: Completely unsure\n'
-                  '1: Very unsure\n'
-                  '2: Slightly unsure\n'
-                  '3: Slightly sure\n'
-                  '4: Very sure\n'
-                  '5: Completely sure'
-                  '\n')
-            confidence = input('Confidence: ')
+
             num_erroneous_clauses = int(input('How many clauses exhibit errors in this sentence? '))
             for n in range(num_erroneous_clauses):
                 print(f'You are now annotating error number {n+1}.')
@@ -114,10 +110,12 @@ def annotate_leerder_data():
                     print(normalized_sentence)
                     clause_structure = input('Clause structure: ')
 
-                with open('Data/leerder_annotated_data.tsv', 'a', encoding='utf-8') as outfile:
+                annotated = input('Target hypothesis created by human or AI? ')
+
+                with open('Data/leerder_annotated_data_clean.tsv', 'a', encoding='utf-8') as outfile:
                     outfile.write(f'{index}\t{level}\t{language}\t{original_sentence}\t{normalized_sentence}\t'
                                   f'{corrected_sentence}\t{clause_type}\t{verb_type}\t{error_type}\t'
-                                  f'{clause_structure}\t{confidence}\n')
+                                  f'{clause_structure}\t{annotated}\n')
 
             print()
 

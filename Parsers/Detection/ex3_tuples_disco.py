@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 06.06.2023
-# Last updated: 07.06.2023
+# Last updated: 11.06.2023
 # Train classifiers based on tuple information
 
 import pickle
@@ -15,11 +15,11 @@ def run_experiment_3(datasplit):
     :param str datasplit:
     :return:
     """
-    train_disco = read_in_json_data_and_convert_to_str_sequence('Tuples/Disco/tuple_data_disco', 'dev', 'C') + \
-                  read_in_json_data_and_convert_to_str_sequence('Tuples/Disco/tuple_data_disco', 'dev', datasplit)
+    train_disco = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'train', 'C') + \
+                  read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'train', datasplit)
 
-    test_disco = read_in_json_data_and_convert_to_str_sequence('Tuples/Disco/tuple_data_disco', 'test', 'C') + \
-                 read_in_json_data_and_convert_to_str_sequence('Tuples/Disco/tuple_data_disco', 'test', datasplit)
+    test_disco = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'C') + \
+                 read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', datasplit)
 
     vectorizer = CountVectorizer()
     train_disco_vectorized = vectorizer.fit_transform(train_disco)
@@ -37,15 +37,15 @@ def run_experiment_3(datasplit):
     predictions = logreg.predict(test_disco_vectorized)
     print('Test instances predicted.')
 
-    with open(f'Tuples/Predictions/predictions_disco_{datasplit}.txt', 'w') as outfile:
+    with open(f'Data/Tuples/Predictions/predictions_disco_{datasplit}.txt', 'w') as outfile:
         for pred in predictions:
             outfile.write(f'{pred}\n')
 
     print('Predictions saved to file.')
 
-    with open(f'Tuples/vectorizer_disco_{datasplit}.pkl', 'wb') as outfile:
+    with open(f'Classifiers/vectorizer_disco_{datasplit}.pkl', 'wb') as outfile:
         pickle.dump(vectorizer, outfile)
-    with open(f'Tuples/logreg_disco_{datasplit}.pkl', 'wb') as outfile:
+    with open(f'Classifiers/logreg_disco_{datasplit}.pkl', 'wb') as outfile:
         pickle.dump(logreg, outfile)
 
     print('Classifier and vectorizer saved to file.')

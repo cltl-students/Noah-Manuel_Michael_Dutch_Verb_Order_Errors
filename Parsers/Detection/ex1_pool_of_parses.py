@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 03.06.2023
-# Last updated: 07.06.2023
+# Last updated: 11.06.2023
 # Check if the particular tree structure is present in the trees accepted as correct
 
 import pandas as pd
@@ -12,7 +12,7 @@ def experiment_1_basic_classification_from_pool():
 
     :return:
     """
-    df_dev_c = pd.read_csv('Data/Trees/dev_C.tsv', encoding='utf-8', sep='\t', header=0)
+    df_dev_c = pd.read_csv('Data/Trees/train_C.tsv', encoding='utf-8', sep='\t', header=0)
 
     pool = {t for t in df_dev_c['tree']}
 
