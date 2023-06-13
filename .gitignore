@@ -58,3 +58,4 @@
 /Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all_and_verbs_sampled.tsv
 /Data/Annotation/Data/add_annotator_information.py
 /Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all_and_verbs_sampled_transformer.tsv
+/Transformers/Detection/Fine-tuning/

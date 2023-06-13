@@ -4,7 +4,7 @@
 # Check if the particular tree structure is present in the trees accepted as correct
 
 import pandas as pd
-from utils_parser_experiments import get_metrics
+from utils_parser_detection import get_metrics
 
 
 def experiment_1_basic_classification_from_pool():

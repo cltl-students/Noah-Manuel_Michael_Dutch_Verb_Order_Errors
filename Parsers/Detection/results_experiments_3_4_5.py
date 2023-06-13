@@ -3,7 +3,7 @@
 # Last updated: 07.06.2023
 # Compute the results with the predictionn files
 
-from utils_parser_experiments import get_metrics, read_predictions, read_in_json_data_and_convert_to_str_sequence
+from utils_parser_detection import get_metrics, read_predictions, read_in_json_data_and_convert_to_str_sequence
 
 
 def get_results_experiment_3():

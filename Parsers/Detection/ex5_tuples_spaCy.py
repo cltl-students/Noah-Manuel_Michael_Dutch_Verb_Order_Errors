@@ -4,7 +4,7 @@
 # Train classifiers based on tuple information (spacy)
 
 import pickle
-from utils_parser_experiments import read_in_json_data_and_convert_to_str_sequence
+from utils_parser_detection import read_in_json_data_and_convert_to_str_sequence
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 

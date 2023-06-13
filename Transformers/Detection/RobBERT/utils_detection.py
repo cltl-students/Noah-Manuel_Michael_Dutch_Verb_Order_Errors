@@ -1,7 +1,7 @@
 # Noah-Manuel Michael
 # Created: 12.05.2023
 # Last updated: 13.06.2023
-# utils for BERTforSequenceclassification
+# Utils for transformers for sequence classification
 # This script was pair-programmed with Chat-GPT (v4)
 
 import torch

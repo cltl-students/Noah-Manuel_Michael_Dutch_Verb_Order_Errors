@@ -5,12 +5,12 @@
 # Fine-tune transformer models for word order error detection
 
 import pandas as pd
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import RobertaTokenizer, RobertaForSequenceClassification
 from transformers import Trainer, TrainingArguments
 from utils_detection import SequenceClassificationDataset
 
 
-def fine_tune_bertje_no_punc_for_detection():
+def fine_tune_robbert_no_punc_for_detection():
     """
 
     :return:
@@ -21,8 +21,8 @@ def fine_tune_bertje_no_punc_for_detection():
                          encoding='utf-8')
 
     # num_labels = 2
-    tokenizer = BertTokenizer.from_pretrained('GroNLP/bert-base-dutch-cased', do_lower_case=True)
-    model = BertForSequenceClassification.from_pretrained('GroNLP/bert-base-dutch-cased')
+    tokenizer = RobertaTokenizer.from_pretrained('pdelobelle/robbert-v2-dutch-base', do_lower_case=True)
+    model = RobertaForSequenceClassification.from_pretrained('pdelobelle/robbert-v2-dutch-base')
 
     train_texts = [s for s in df_train['no_punc']] + \
                   [s for s in df_train['scrambled_no_punc']]
@@ -36,7 +36,7 @@ def fine_tune_bertje_no_punc_for_detection():
     train_dataset = SequenceClassificationDataset(train_texts, train_labels, tokenizer)
     val_dataset = SequenceClassificationDataset(val_texts, val_labels, tokenizer)
 
-    training_args = TrainingArguments(output_dir='results_bertje_detection_no_punc',
+    training_args = TrainingArguments(output_dir='results_robbert_detection_no_punc',
                                       num_train_epochs=3,
                                       per_device_train_batch_size=128,
                                       per_device_eval_batch_size=128,
@@ -54,8 +54,8 @@ def fine_tune_bertje_no_punc_for_detection():
 
     trainer.train()
 
-    trainer.save_model('./finetuned_bertje_sequence_classification_no_punc')
+    trainer.save_model('./finetuned_robbert_sequence_classification_no_punc')
 
 
 if __name__ == '__main__':
-    fine_tune_bertje_no_punc_for_detection()
+    fine_tune_robbert_no_punc_for_detection()

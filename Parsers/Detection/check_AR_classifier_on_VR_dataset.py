@@ -4,7 +4,7 @@
 # Explore the performance of AR classifiers on VR datasets to determine whether training on AR is already enough
 
 import pickle
-from utils_parser_experiments import read_in_json_data_and_convert_to_str_sequence, get_metrics
+from utils_parser_detection import read_in_json_data_and_convert_to_str_sequence, get_metrics
 
 
 def check_AR_train_VR_predict():

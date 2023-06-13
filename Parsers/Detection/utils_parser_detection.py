@@ -1,7 +1,7 @@
 # Noah-Manuel Michael
 # Created: 07.06.2023
 # Last updated: 09.06.2023
-# utils for parser experiments
+# utils for parser experiments (detection)
 
 import json
 import pandas as pd
