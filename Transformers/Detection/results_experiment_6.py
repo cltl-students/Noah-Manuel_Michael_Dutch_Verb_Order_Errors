@@ -19,13 +19,21 @@ def get_results_experiment_6():
                 ['incorrect' for _ in range(len(df_test['original']))]
 
     test_AR_predicted_bertje = read_predictions('Predictions/predictions_bertje_no_punc_AR.txt')
+    test_VR_predicted_bertje = read_predictions('Predictions/predictions_bertje_no_punc_VR.txt')
     test_AR_predicted_robbert = read_predictions('Predictions/predictions_robbert_no_punc_AR.txt')
+    test_AR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_no_punc_AR.txt')
 
     print('BERTje on AR:')
     get_metrics(test_gold, test_AR_predicted_bertje)
 
+    print('BERTje on VR:')
+    get_metrics(test_gold, test_VR_predicted_bertje)
+
     print('RobBERT on AR:')
     get_metrics(test_gold, test_AR_predicted_robbert)
+
+    print('GPT-2 on AR:')
+    get_metrics(test_gold, test_AR_predicted_gpt2)
 
 
 if __name__ == '__main__':
