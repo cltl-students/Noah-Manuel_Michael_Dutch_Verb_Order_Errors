@@ -59,3 +59,9 @@
 /Data/Annotation/Data/add_annotator_information.py
 /Data/Dataset_Construction/Permuted_Datasets/train_shuffled_random_all_and_verbs_sampled_transformer.tsv
 /Transformers/Detection/Fine-tuning/
+/Transformers/Detection/BERTje/finetuned_bertje_sequence_classification_no_punc/
+/Transformers/Detection/BERTje/finetuned_bertje_sequence_classification_verbs_no_punc/
+/Transformers/Detection/GPT-2/finetuned_gpt2_sequence_classification_no_punc/
+/Transformers/Detection/GPT-2/finetuned_gpt2_sequence_classification_verbs_no_punc/
+/Transformers/Detection/RobBERT/finetuned_robbert_sequence_classification_no_punc/
+/Transformers/Detection/RobBERT/finetuned_robbert_sequence_classification_verbs_no_punc/
