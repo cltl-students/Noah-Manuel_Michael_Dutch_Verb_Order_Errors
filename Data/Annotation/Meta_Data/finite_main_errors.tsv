@@ -1,0 +1,76 @@
+a s o fv nfv	end,beforenfv
+a s fv nfv	end,beforenfv
+m s a a a fv nfv	end,beforenfv
+fv s a a 	beginning,first
+fv s a a o nfv nfv	beginning,first
+a s fv a	middle,afters
+a s a fv a a m a	middle,random
+a a fv s o	middle,befores
+s o a fv	end,final
+a s fv o	middle,afters
+a a s fv a	middle,afters
+a s fv a o m o a	middle,afters
+fv s	beginning,first
+a s fv a a te nfv pc	middle,afters
+m a fv s a o a	middle,befores
+a s fv o a nfv	middle,afters
+ce s fv a nfv	middle,afters
+a m s a a fv	end,final
+ce s fv o	middle,afters
+a s fv o nfv	middle,afters
+s a fv	end,final
+ce o m fv	end,final
+a s m fv o p	middle,random
+a s fv o m nfv	middle,afters
+a s a a fv	end,final
+a s fv a nfv	middle,afters
+a a fv s o a	middle,befores
+ce s fv a po	middle,afters
+s a a fv 	end,final
+s a fv o a	middle,random
+ce fv m o	beginning,first
+a s o a fv	end,final
+a s fv o	middle,afters
+fc s fv a a a om o te nfv	middle,afters
+fc a fv s o	middle,befores
+a s fc fv a	middle,random
+fv s m	beginning,first
+a s fv a m a nfv om o a te nfv	middle,afters
+a a fv s o nfv	middle,befores
+s a a fv	end,final
+a s fv po nfv	middle,afters
+fc a fv s a a po nfv pc	middle,befores
+a s a o fv	end,final
+a s m a fv	end,final
+a s fv a a nfv	middle,afters
+m a fv s o a a	middle,befores
+o a fv s m	middle,befores
+m s po fv nfv	end,beforenfv
+a s fv a	middle,afters
+m a fv s a nfv nfv	middle,befores
+a s fv o	middle,afters
+m s fv o a	middle,afters
+s a fv po	middle,random
+s o fv	end,final
+m s fv a o a nfv nfv	middle,afters
+a s fv o a m	middle,afters
+s o fv a nfv om o te nfv	middle,random
+ce a s fv po nfv	middle,afters
+fv s a nfv	beginning,first
+a s fv a a o	middle,afters
+a s a a fv	end,final
+a s fv a po nfv	middle,afters
+m s fv a a	middle,afters
+ce s a a po fv	end,final
+a s m fv o	middle,random
+a s po fv nfv nfv	end,beforenfv
+a nfv o po fv o a	middle,random
+m s fv o nfv m	middle,afters
+a s o fv	end,final
+m s a a fv	end,final
+a s a po fv nfv	end,beforenfv
+a s fv po a	middle,afters
+a s fv a m	middle,afters
+ce s a fv nfv	end,beforenfv
+m a fv s po m	middle,befores
+a s fv o m	middle,afters
