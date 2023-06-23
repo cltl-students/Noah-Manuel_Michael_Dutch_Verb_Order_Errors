@@ -1,6 +1,6 @@
 # Noah-Manuel Michael
 # Created: 06.05.2023
-# Last updated: 12.05.2023
+# Last updated: 23.06.2023
 # Get results for experiment 6 (fine-tuning for detection)
 
 import pandas as pd
@@ -55,14 +55,22 @@ def get_results_on_VT_exp_6():
 
     test_gold = ['correct' if label == 'correct' else 'incorrect' for label in df_test['general_error_label']]
 
-    test_VT_predicted_bertje_AR = read_predictions('Predictions/predictions_bertje_no_punc_VT.txt')
-    test_VT_predicted_bertje_VR = read_predictions('Predictions/predictions_bertje_verbs_no_punc_VT.txt')
+    test_VT_predicted_bertje_AR = read_predictions('Predictions/predictions_bertje_AR_no_punc_VT.txt')
+    test_VT_predicted_bertje_VR = read_predictions('Predictions/predictions_bertje_VR_no_punc_VT.txt')
+    test_VT_predicted_robbert_AR = read_predictions('Predictions/predictions_robbert_AR_no_punc_VT.txt')
+    test_VT_predicted_robbert_VR = read_predictions('Predictions/predictions_robbert_VR_no_punc_VT.txt')
 
     print('BERTje AR on VT:')
     get_metrics(test_gold, test_VT_predicted_bertje_AR)
 
     print('BERTje VR on VT:')
     get_metrics(test_gold, test_VT_predicted_bertje_VR)
+
+    print('RobBERT AR on VT:')
+    get_metrics(test_gold, test_VT_predicted_robbert_AR)
+
+    print('RobBERT VR on VT:')
+    get_metrics(test_gold, test_VT_predicted_robbert_VR)
 
 
 if __name__ == '__main__':

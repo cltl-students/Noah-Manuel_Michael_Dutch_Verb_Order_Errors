@@ -1,21 +1,23 @@
 # Noah-Manuel Michael
-# Created: 30.04.2023
-# Last updated: 09.06.2023
-# get robbert predictions on VT
+# Created: 23.06.2023
+# Last updated: 23.06.2023
+# get gpt2 predictions on VT
 
 import torch
 import pandas as pd
-from transformers import RobertaTokenizer, RobertaForSequenceClassification
+from transformers import GPT2Tokenizer, GPT2ForSequenceClassification
 
-def get_predictions_robbert_VT(model_path):
+
+def get_predictions_gpt2_VT(model_path):
     """
 
     :param model_path:
     :return:
     """
     # Load your fine-tuned model
-    model = RobertaForSequenceClassification.from_pretrained(model_path)
-    tokenizer = RobertaTokenizer.from_pretrained('pdelobelle/robbert-v2-dutch-base', do_lower_case=True)
+    model = GPT2ForSequenceClassification.from_pretrained(model_path)
+    tokenizer = GPT2Tokenizer.from_pretrained('GroNLP/gpt2-small-dutch', do_lower_case=True)
+    tokenizer.pad_token = tokenizer.eos_token
 
     df_test = pd.read_csv('../../../Data/Dataset_Construction/Permuted_Datasets/'
                           'test_shuffled_random_all_and_verbs_and_tendencies.tsv', sep='\t', encoding='utf-8', header=0)
@@ -52,8 +54,8 @@ def get_predictions_robbert_VT(model_path):
         predicted_labels.extend(batch_predicted_labels.tolist())
 
     # Write predictions to file
-    with open(f'../Predictions/predictions_robbert_'
-              f'{model_path.lstrip("finetuned_robbert_sequence_classification_")}_VT.txt', 'w') as outfile:
+    with open(f'../Predictions/predictions_gpt2_'
+              f'{model_path.replace("finetuned_gpt2_sequence_classification_", "")}_VT.txt', 'w') as outfile:
         for label in predicted_labels:
             if label == 1:
                 outfile.write('correct\n')
@@ -62,5 +64,5 @@ def get_predictions_robbert_VT(model_path):
 
 
 if __name__ == '__main__':
-    get_predictions_robbert_VT('finetuned_robbert_sequence_classification_no_punc')
-    get_predictions_robbert_VT('finetuned_robbert_sequence_classification_verbs_no_punc')
+    get_predictions_gpt2_VT('finetuned_gpt2_sequence_classification_no_punc')
+    get_predictions_gpt2_VT('finetuned_gpt2_sequence_classification_verbs_no_punc')
