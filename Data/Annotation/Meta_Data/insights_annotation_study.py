@@ -17,6 +17,9 @@ def extract_insights_from_annotated_data():
     print('Languages:')
     print(Counter(df['Language']))
 
+    print('Levels:')
+    print(Counter(df['Level']))
+
     print('Error types:')
     print(Counter(df['Error_type']))
 

@@ -44,5 +44,29 @@ def get_results_experiment_6():
     get_metrics(test_gold, test_VR_predicted_gpt2)
 
 
+def get_results_on_VT_exp_6():
+    """
+
+    :return:
+    """
+    df_test = pd.read_csv('../../Data/Dataset_Construction/'
+                          'Permuted_Datasets/test_shuffled_random_all_and_verbs_and_tendencies.tsv',
+                          sep='\t', encoding='utf-8', header=0)
+
+    test_gold = ['correct' if label == 'correct' else 'incorrect' for label in df_test['general_error_label']]
+
+    test_VT_predicted_bertje_AR = read_predictions('Predictions/predictions_bertje_no_punc_VT.txt')
+    test_VT_predicted_bertje_VR = read_predictions('Predictions/predictions_bertje_verbs_no_punc_VT.txt')
+
+    print('BERTje AR on VT:')
+    get_metrics(test_gold, test_VT_predicted_bertje_AR)
+
+    print('BERTje VR on VT:')
+    get_metrics(test_gold, test_VT_predicted_bertje_VR)
+
+
 if __name__ == '__main__':
+    print('___ AR & VR ___')
     get_results_experiment_6()
+    print('___ VT ___')
+    get_results_on_VT_exp_6()
