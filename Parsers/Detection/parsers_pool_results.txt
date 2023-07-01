@@ -73,4 +73,79 @@ Accuracy:
 _____________________
 
 
+C:\Users\nwork\anaconda3\envs\Thesis\python.exe C:\Users\nwork\OneDrive\Studium\ma_thesis\Parsers\Detection\ex2_pool_of_simplified_parses.py
+AR_C
+___
+Confusion matrix ['incorrect', 'correct']:
+[[11009  2577]
+ [ 8378  5208]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.567855  0.810319  0.667758    0.604001    13586
+correct     0.668979  0.383336  0.487389    0.582212    13586
+Macro F1:
+0.5775739610237437
+Micro F1:
+0.5968276166642131
+Average F1:
+0.5775739610237437
+Macro F0.5:
+0.5931061956065504
+Micro F0.5:
+0.5968276166642131
+Average F0.5:
+0.5931061956065504
+Accuracy:
+0.5968276166642131
+_____________________
+
+VR_C
+___
+Confusion matrix ['incorrect', 'correct']:
+[[10341  3245]
+ [ 8378  5208]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.552433  0.761151  0.640210    0.584488    13586
+correct     0.616113  0.383336  0.472617    0.549390    13586
+Macro F1:
+0.5564136093141973
+Micro F1:
+0.5722434859414103
+Average F1:
+0.5564136093141973
+Macro F0.5:
+0.5669392622377589
+Micro F0.5:
+0.5722434859414103
+Average F0.5:
+0.5669392622377589
+Accuracy:
+0.5722434859414103
+_____________________
+
+VT_C
+___
+Confusion matrix ['incorrect', 'correct']:
+[[1949  293]
+ [6628 4716]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.227236  0.869313  0.360292    0.266621     2242
+correct     0.941505  0.415726  0.576775    0.751434    11344
+Macro F1:
+0.4685334912188717
+Micro F1:
+0.4905785367289857
+Average F1:
+0.4685334912188717
+Macro F0.5:
+0.5090275507241449
+Micro F0.5:
+0.4905785367289857
+Average F0.5:
+0.5090275507241449
+Accuracy:
+0.4905785367289857
+_____________________
+
+
+Process finished with exit code 0
 
