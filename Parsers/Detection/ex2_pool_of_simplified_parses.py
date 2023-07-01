@@ -19,16 +19,22 @@ def experiment_2_basic_classification_from_simplified_pool():
     df_test_c = pd.read_csv('Data/Trees/test_C.tsv', encoding='utf-8', sep='\t', header=0)
     df_test_ar = pd.read_csv('Data/Trees/test_AR.tsv', encoding='utf-8', sep='\t', header=0)
     df_test_vr = pd.read_csv('Data/Trees/test_VR.tsv', encoding='utf-8', sep='\t', header=0)
+    df_test_vt = pd.read_csv('Data/Trees/test_VT.tsv', encoding='utf-8', sep='\t', header=0)
+    label_df_vt = pd.read_csv('../../Data/Dataset_Construction/Permuted_Datasets/'
+                              'test_shuffled_random_all_and_verbs_and_tendencies.tsv', encoding='utf-8', sep='\t',
+                              header=0)
 
     # get the gold labels for each individual portion of the datasets
     c_labels_gold = ['correct' for _ in range(len(df_test_c))]
     ar_labels_gold = ['incorrect' for _ in range(len(df_test_ar))]
     vr_labels_gold = ['incorrect' for _ in range(len(df_test_vr))]
+    vt_labels_gold = ['correct' if label == 'correct' else 'incorrect' for label in label_df_vt['general_error_label']]
 
     # get the predicted labels for each individual portion of the datasets (for calculating accuracy)
     predicted_labels_c = ['correct' if tree in pool else 'incorrect' for tree in df_test_c['simple_tree']]
     predicted_labels_ar = ['correct' if tree in pool else 'incorrect' for tree in df_test_ar['simple_tree']]
     predicted_labels_vr = ['correct' if tree in pool else 'incorrect' for tree in df_test_vr['simple_tree']]
+    predicted_labels_vt = ['correct' if tree in pool else 'incorrect' for tree in df_test_vt['simple_tree']]
 
     # get the labels for the combined datasets (shuffled portion + correct portion for precision, recall, f)
     gold_labels_ar_c = ar_labels_gold + c_labels_gold
@@ -42,6 +48,9 @@ def experiment_2_basic_classification_from_simplified_pool():
     print()
     print('VR_C\n___')
     get_metrics(gold_labels_vr_c, predicted_labels_vr_c)
+    print()
+    print('VT_C\n___')
+    get_metrics(vt_labels_gold, predicted_labels_vt)
     print()
 
 

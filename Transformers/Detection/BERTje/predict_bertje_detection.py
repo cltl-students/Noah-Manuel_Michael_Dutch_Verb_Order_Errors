@@ -53,7 +53,7 @@ def get_predictions_fine_tuned_bertje_no_punc():
         predicted_labels.extend(batch_predicted_labels.tolist())
 
     # Write predictions to file
-    with open('../Predictions/predictions_bertje_no_punc_AR.txt', 'w') as outfile:
+    with open('../Predictions/predictions_bertje_AR_on_AR.txt', 'w') as outfile:
         for label in predicted_labels:
             if label == 1:
                 outfile.write('correct\n')

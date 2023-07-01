@@ -18,29 +18,41 @@ def get_results_experiment_6():
     test_gold = ['correct' for _ in range(len(df_test['original']))] + \
                 ['incorrect' for _ in range(len(df_test['original']))]
 
-    test_AR_predicted_bertje = read_predictions('Predictions/predictions_bertje_no_punc_AR.txt')
-    test_VR_predicted_bertje = read_predictions('Predictions/predictions_bertje_no_punc_VR.txt')
-    test_AR_predicted_robbert = read_predictions('Predictions/predictions_robbert_no_punc_AR.txt')
-    test_VR_predicted_robbert = read_predictions('Predictions/predictions_robbert_no_punc_VR.txt')
-    test_AR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_no_punc_AR.txt')
-    test_VR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_no_punc_VR.txt')
+    test_AR_predicted_bertje = read_predictions('Predictions/predictions_bertje_AR_on_AR.txt')
+    test_AR_VR_predicted_bertje = read_predictions('Predictions/predictions_bertje_AR_on_VR.txt')
+    test_VR_predicted_bertje = read_predictions('Predictions/predictions_bertje_VR_on_VR.txt')
+    test_AR_predicted_robbert = read_predictions('Predictions/predictions_robbert_AR_on_AR.txt')
+    test_AR_VR_predicted_robbert = read_predictions('Predictions/predictions_robbert_AR_on_VR.txt')
+    test_VR_predicted_robbert = read_predictions('Predictions/predictions_robbert_VR_on_VR.txt')
+    test_AR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_AR_on_AR.txt')
+    test_AR_VR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_AR_on_VR.txt')
+    test_VR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_VR_on_VR.txt')
 
-    print('BERTje on AR:')
+    print('BERTje AR on AR:')
     get_metrics(test_gold, test_AR_predicted_bertje)
 
-    print('BERTje on VR:')
+    print('BERTje AR on VR:')
+    get_metrics(test_gold, test_AR_VR_predicted_bertje)
+
+    print('BERTje VR on VR:')
     get_metrics(test_gold, test_VR_predicted_bertje)
 
-    print('RobBERT on AR:')
+    print('RobBERT AR on AR:')
     get_metrics(test_gold, test_AR_predicted_robbert)
 
-    print('RobBERT on VR:')
+    print('RobBERT AR on VR:')
+    get_metrics(test_gold, test_AR_VR_predicted_robbert)
+
+    print('RobBERT VR on VR:')
     get_metrics(test_gold, test_VR_predicted_robbert)
 
-    print('GPT-2 on AR:')
+    print('GPT-2 AR on AR:')
     get_metrics(test_gold, test_AR_predicted_gpt2)
 
-    print('GPT-2 on VR:')
+    print('GPT-2 AR on VR:')
+    get_metrics(test_gold, test_AR_VR_predicted_gpt2)
+
+    print('GPT-2 VR on VR:')
     get_metrics(test_gold, test_VR_predicted_gpt2)
 
 
@@ -55,10 +67,12 @@ def get_results_on_VT_exp_6():
 
     test_gold = ['correct' if label == 'correct' else 'incorrect' for label in df_test['general_error_label']]
 
-    test_VT_predicted_bertje_AR = read_predictions('Predictions/predictions_bertje_AR_no_punc_VT.txt')
-    test_VT_predicted_bertje_VR = read_predictions('Predictions/predictions_bertje_VR_no_punc_VT.txt')
-    test_VT_predicted_robbert_AR = read_predictions('Predictions/predictions_robbert_AR_no_punc_VT.txt')
-    test_VT_predicted_robbert_VR = read_predictions('Predictions/predictions_robbert_VR_no_punc_VT.txt')
+    test_VT_predicted_bertje_AR = read_predictions('Predictions/predictions_bertje_AR_on_VT.txt')
+    test_VT_predicted_bertje_VR = read_predictions('Predictions/predictions_bertje_VR_on_VT.txt')
+    test_VT_predicted_robbert_AR = read_predictions('Predictions/predictions_robbert_AR_on_VT.txt')
+    test_VT_predicted_robbert_VR = read_predictions('Predictions/predictions_robbert_VR_on_VT.txt')
+    test_VT_predicted_gpt2_AR = read_predictions('Predictions/predictions_gpt2_AR_on_VT.txt')
+    test_VT_predicted_gpt2_VR = read_predictions('Predictions/predictions_gpt2_VR_on_VT.txt')
 
     print('BERTje AR on VT:')
     get_metrics(test_gold, test_VT_predicted_bertje_AR)
@@ -71,6 +85,12 @@ def get_results_on_VT_exp_6():
 
     print('RobBERT VR on VT:')
     get_metrics(test_gold, test_VT_predicted_robbert_VR)
+
+    print('GPT-2 AR on VT:')
+    get_metrics(test_gold, test_VT_predicted_gpt2_AR)
+
+    print('GPT-2 VR on VT:')
+    get_metrics(test_gold, test_VT_predicted_gpt2_VR)
 
 
 if __name__ == '__main__':

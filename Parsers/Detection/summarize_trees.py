@@ -49,26 +49,6 @@ def remove_leaves(tree):
             tree[i] = ""
 
 
-# not needed anymore as I remove the punctuation before parsing
-# def remove_let(tree):
-#     """
-#     Recursive function to traverse the tree and remove "let" labeled nodes (punctuation).
-#     :param tree: a tree parsed with nltk Tree
-#     :return: None
-#     """
-#     idx = 0
-#     while idx < len(tree):
-#         subtree = tree[idx]
-#         if isinstance(subtree, Tree):
-#             if subtree.label() == 'let':
-#                 del tree[idx]
-#             else:
-#                 remove_let(subtree)
-#                 idx += 1
-#         else:
-#             idx += 1
-
-
 def do_simplification(tree):
     """
     Execute the functions necessary to simplify the tree structures.
@@ -86,7 +66,7 @@ def simplify_trees():
     :return: None
     """
     for split in ['test', 'train']:
-        for shuffle in ['C', 'AR', 'VR']:
+        for shuffle in ['C', 'AR', 'VR', 'VT']:
             df = pd.read_csv(f'Data/Trees/{split}_{shuffle}.tsv', encoding='utf-8', sep='\t', header=0)
             # remove verbs in path for all random shuffles
             simplified_trees = []

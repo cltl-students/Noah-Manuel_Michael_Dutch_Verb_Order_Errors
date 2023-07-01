@@ -1,0 +1,399 @@
+C:\Users\nwork\anaconda3\envs\Thesis\python.exe C:\Users\nwork\OneDrive\Studium\ma_thesis\Parsers\Detection\check_classifiers_on_other_datasets.py 
+
+
+
+
+Results for disco_AR trained classifier on AR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[10149  3437]
+ [ 2477 11109]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.803818  0.747019  0.774378    0.791777    13586
+correct     0.763715  0.817680  0.789777    0.773931    13586
+Macro F1:
+0.7820774570424023
+Micro F1:
+0.7823494774032091
+Average F1:
+0.7820774570424023
+Macro F0.5:
+0.7828539000025503
+Micro F0.5:
+0.7823494774032091
+Average F0.5:
+0.7828539000025503
+Accuracy:
+0.7823494774032091
+_____________________
+
+______
+
+Results for disco_AR trained classifier on VR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 7526  6060]
+ [ 2477 11109]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.752374  0.553953  0.638094    0.702078    13586
+correct     0.647038  0.817680  0.722419    0.675221    13586
+Macro F1:
+0.6802565728596994
+Micro F1:
+0.6858162814662152
+Average F1:
+0.6802565728596994
+Macro F0.5:
+0.6886495361327047
+Micro F0.5:
+0.6858162814662152
+Average F0.5:
+0.6886495361327047
+Accuracy:
+0.6858162814662152
+_____________________
+
+______
+
+Results for disco_AR trained classifier on VT dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 945 1297]
+ [2091 9253]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.311265  0.421499  0.358090    0.328444     2242
+correct     0.877062  0.815673  0.845254    0.864056    11344
+Macro F1:
+0.6016722966383242
+Micro F1:
+0.7506256440453407
+Average F1:
+0.6016722966383242
+Macro F0.5:
+0.5962500253672676
+Micro F0.5:
+0.7506256440453408
+Average F0.5:
+0.5962500253672676
+Accuracy:
+0.7506256440453408
+_____________________
+
+______
+
+
+
+
+Results for disco_VR trained classifier on VR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 9155  4431]
+ [ 2919 10667]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.758241  0.673855  0.713562    0.739714    13586
+correct     0.706517  0.785146  0.743760    0.720958    13586
+Macro F1:
+0.7286607756864298
+Micro F1:
+0.7295009568673635
+Average F1:
+0.7286607756864298
+Macro F0.5:
+0.7303359384661416
+Micro F0.5:
+0.7295009568673635
+Average F0.5:
+0.7303359384661416
+Accuracy:
+0.7295009568673635
+_____________________
+
+______
+
+Results for disco_VR trained classifier on VT dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[1195 1047]
+ [2448 8896]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.328026  0.533006  0.406117    0.355359     2242
+correct     0.894700  0.784203  0.835815    0.870178    11344
+Macro F1:
+0.6209662667818647
+Micro F1:
+0.7427498895922273
+Average F1:
+0.6209662667818647
+Macro F0.5:
+0.6127681324480279
+Micro F0.5:
+0.7427498895922273
+Average F0.5:
+0.6127681324480279
+Accuracy:
+0.7427498895922273
+_____________________
+
+______
+
+
+
+
+
+Results for disco_simple_AR trained classifier on AR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 9720  3866]
+ [ 2478 11108]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.796852  0.715442  0.753956    0.779121    13586
+correct     0.741819  0.817606  0.777871    0.755831    13586
+Macro F1:
+0.765913545064318
+Micro F1:
+0.7665243633151774
+Average F1:
+0.765913545064318
+Macro F0.5:
+0.7674761019741176
+Micro F0.5:
+0.7665243633151774
+Average F0.5:
+0.7674761019741176
+Accuracy:
+0.7665243633151774
+_____________________
+
+______
+
+Results for disco_simple_AR trained classifier on VR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 8197  5389]
+ [ 2478 11108]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.767869  0.603342  0.675735    0.728156    13586
+correct     0.673335  0.817606  0.738490    0.697967    13586
+Macro F1:
+0.7071124477243012
+Micro F1:
+0.7104740173708229
+Average F1:
+0.7071124477243012
+Macro F0.5:
+0.7130614373920046
+Micro F0.5:
+0.7104740173708229
+Average F0.5:
+0.7130614373920046
+Accuracy:
+0.7104740173708229
+_____________________
+
+______
+
+Results for disco_simple_AR trained classifier on VT dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[1022 1220]
+ [2109 9235]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.326413  0.455843  0.380421    0.346065     2242
+correct     0.883309  0.814087  0.847287    0.868539    11344
+Macro F1:
+0.6138535972026098
+Micro F1:
+0.7549683497718239
+Average F1:
+0.6138535972026098
+Macro F0.5:
+0.6073020729988783
+Micro F0.5:
+0.7549683497718239
+Average F0.5:
+0.6073020729988783
+Accuracy:
+0.7549683497718239
+_____________________
+
+______
+
+
+
+
+Results for disco_simple_VR trained classifier on VR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 9294  4292]
+ [ 3149 10437]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.746926  0.684087  0.714127    0.733451    13586
+correct     0.708602  0.768217  0.737206    0.719773    13586
+Macro F1:
+0.7256664894214928
+Micro F1:
+0.7261519210952451
+Average F1:
+0.7256664894214928
+Macro F0.5:
+0.7266122149028511
+Micro F0.5:
+0.7261519210952451
+Average F0.5:
+0.7266122149028511
+Accuracy:
+0.7261519210952451
+_____________________
+
+______
+
+Results for disco_simple_VR trained classifier on VT dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[1193 1049]
+ [2688 8656]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.307395  0.532114  0.389678    0.335754     2242
+correct     0.891911  0.763047  0.822462    0.862770    11344
+Macro F1:
+0.6060700684815542
+Micro F1:
+0.724937435595466
+Average F1:
+0.6060700684815542
+Macro F0.5:
+0.5992619004217556
+Micro F0.5:
+0.724937435595466
+Average F0.5:
+0.5992619004217556
+Accuracy:
+0.724937435595466
+_____________________
+
+______
+
+
+
+
+
+Results for spacy_AR trained classifier on AR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 9185  4401]
+ [ 3225 10361]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.740129  0.676064  0.706647    0.726363    13586
+correct     0.701870  0.762623  0.730986    0.713233    13586
+Macro F1:
+0.7188167447280478
+Micro F1:
+0.7193434417783012
+Average F1:
+0.7188167447280478
+Macro F0.5:
+0.7197980221436098
+Micro F0.5:
+0.7193434417783012
+Average F0.5:
+0.7197980221436098
+Accuracy:
+0.7193434417783012
+_____________________
+
+______
+
+Results for spacy_AR trained classifier on VR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 6048  7538]
+ [ 3225 10361]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.652216  0.445164  0.529157    0.596709    13586
+correct     0.578859  0.762623  0.658155    0.608168    13586
+Macro F1:
+0.5936558414117499
+Micro F1:
+0.6038937141174738
+Average F1:
+0.5936558414117499
+Macro F0.5:
+0.6024385116737468
+Micro F0.5:
+0.6038937141174738
+Average F0.5:
+0.6024385116737468
+Accuracy:
+0.6038937141174738
+_____________________
+
+______
+
+Results for spacy_AR trained classifier on VT dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[ 760 1482]
+ [2711 8633]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.218957  0.338983  0.266060    0.235644     2242
+correct     0.853485  0.761019  0.804604    0.833237    11344
+Macro F1:
+0.5353319961365229
+Micro F1:
+0.6913734726924775
+Average F1:
+0.5353319961365229
+Macro F0.5:
+0.5344405584092601
+Micro F0.5:
+0.6913734726924775
+Average F0.5:
+0.5344405584092601
+Accuracy:
+0.6913734726924775
+_____________________
+
+______
+
+
+
+
+Results for spacy_VR trained classifier on VR dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[9284 4302]
+ [4299 9287]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.683501  0.683351  0.683426    0.683471    13586
+correct     0.683420  0.683571  0.683496    0.683451    13586
+Macro F1:
+0.6834609117898894
+Micro F1:
+0.6834609156484617
+Average F1:
+0.6834609117898894
+Macro F0.5:
+0.6834609174727979
+Micro F0.5:
+0.6834609156484617
+Average F0.5:
+0.6834609174727979
+Accuracy:
+0.6834609156484617
+_____________________
+
+______
+
+Results for spacy_VR trained classifier on VT dataset:
+Confusion matrix ['incorrect', 'correct']:
+[[1230 1012]
+ [3494 7850]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.260373  0.548617  0.353144    0.290945     2242
+correct     0.885805  0.691996  0.776997    0.838819    11344
+Macro F1:
+0.5650703865602043
+Micro F1:
+0.6683350507875755
+Average F1:
+0.5650703865602043
+Macro F0.5:
+0.564881909307408
+Micro F0.5:
+0.6683350507875754
+Average F0.5:
+0.564881909307408
+Accuracy:
+0.6683350507875755
+_____________________
+
+______
+
+
+Process finished with exit code 0

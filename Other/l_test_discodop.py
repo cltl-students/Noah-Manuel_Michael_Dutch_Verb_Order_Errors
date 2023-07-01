@@ -12,9 +12,7 @@ def get_probability_and_draw_tree_discodop():
 
 	:return:
 	"""
-	df = pd.read_csv('/mnt/c/Users/nwork/OneDrive/PycharmProjects/Thesis/Annotation/Unpermuted_Datasets/leerder_annotated_data.tsv',
-					 sep='\t', keep_default_na=False)
-	sentence_list = df['Corrected'].tolist()
+	sentence_list = ['Ik lees boeken']
 
 	top = 'ROOT'  # the root label in the treebank
 	directory = '/home/noah/disco-dop/nl'
@@ -23,9 +21,13 @@ def get_probability_and_draw_tree_discodop():
 	myparser = parser.Parser(params)
 	myparser.stages[-1].estimator = 'rfe'
 
-	for sent in sentence_list[:3]:
+	for sent in sentence_list:
 		result = list(myparser.parse(sent.split()))
+		print(result)
+		print('____________________________________________________')
 		for res in result:
+			print(res.name)
+			print(res)
 			print(res.prob)
 			print(tree.DrawTree(res.parsetree, sent=sent.split()))
 			print('________________________')

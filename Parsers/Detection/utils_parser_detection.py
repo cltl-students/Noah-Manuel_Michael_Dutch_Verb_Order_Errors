@@ -5,7 +5,7 @@
 
 import json
 import pandas as pd
-from sklearn.metrics import confusion_matrix, precision_recall_fscore_support, accuracy_score
+from sklearn.metrics import confusion_matrix, precision_recall_fscore_support, accuracy_score, f1_score, fbeta_score
 
 
 def read_in_json_data_and_convert_to_str_sequence(path, split, dataset, spacy=False):
@@ -28,7 +28,7 @@ def read_in_json_data_and_convert_to_str_sequence(path, split, dataset, spacy=Fa
             sent_tuples = json.loads(line.strip())
             if spacy:  # if processed with spacy on SURF the tuples are saved in a dictionary, so we have to access the
                 # values through the key
-                for key in ['no_punc', 'scrambled_no_punc', 'verbs_random_no_punc']:
+                for key in ['no_punc', 'scrambled_no_punc', 'verbs_random_no_punc', 'tendencies_no_punc']:
                     try:  # retrieve the list of lists, join the tuples together to be of the form 0_PoS, then join
                         # everything to be one str sequence
                         json_data.append(' '.join([(str(tup[0]) + '_' + str(tup[1])) for tup in sent_tuples[key]]))
@@ -83,12 +83,21 @@ def get_metrics(y_true, y_pred):
 
     accuracy = accuracy_score(y_true, y_pred)
 
-    macro_micro_average_f05 = (f05[0] + f05[1]) / 2
+    macro_f1 = f1_score(y_true, y_pred, average='macro')
+    micro_f1 = f1_score(y_true, y_pred, average='micro')
+    average_f1 = (f1[0] + f1[1]) / 2
+    macro_f05 = fbeta_score(y_true, y_pred, beta=0.5, average='macro')
+    micro_f05 = fbeta_score(y_true, y_pred, beta=0.5, average='micro')
+    average_f05 = (f05[0] + f05[1]) / 2
 
-    print('Confusion matrix [\'incorrect\', \'correct\']:')
-    print(matrix)
+    print(f'Confusion matrix [\'incorrect\', \'correct\']:\n{matrix}')
     print(metrics_summary)
-    print('Accuracy:')
-    print(accuracy)
-    print('Average F0.5:')
-    print(macro_micro_average_f05)
+    print(f'Macro F1:\n{macro_f1}')
+    print(f'Micro F1:\n{micro_f1}')
+    print(f'Average F1:\n{average_f1}')
+    print(f'Macro F0.5:\n{macro_f05}')
+    print(f'Micro F0.5:\n{micro_f05}')
+    print(f'Average F0.5:\n{average_f05}')
+    print(f'Accuracy:\n{accuracy}')
+
+    print('_____________________')
