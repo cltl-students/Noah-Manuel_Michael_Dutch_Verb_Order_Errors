@@ -78,8 +78,8 @@ def get_results_on_VT_exp_6():
     test_VT_predicted_bertje_VR = read_predictions('Predictions3/predictions_bertje_VR_on_VT3.txt')
     test_VT_predicted_robbert_AR = read_predictions('Predictions3/predictions_robbert_AR_on_VT3.txt')
     test_VT_predicted_robbert_VR = read_predictions('Predictions3/predictions_robbert_VR_on_VT3.txt')
-    test_VT_predicted_gpt2_AR = read_predictions('Predictions3/predictions_gpt2_AR_on_VT.txt')
-    test_VT_predicted_gpt2_VR = read_predictions('Predictions3/predictions_gpt2_VR_on_VT.txt')
+    test_VT_predicted_gpt2_AR = read_predictions('Predictions3/predictions_gpt2_AR_on_VT3.txt')
+    test_VT_predicted_gpt2_VR = read_predictions('Predictions3/predictions_gpt2_VR_on_VT3.txt')
 
     print('BERTje AR on VT:')
     get_metrics(test_gold, test_VT_predicted_bertje_AR)

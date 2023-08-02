@@ -1,0 +1,335 @@
+C:\Users\nwork\anaconda3\envs\Thesis\python.exe C:\Users\nwork\OneDrive\Studium\ma_thesis\Transformers\Detection\results_experiment_6_3.py 
+___ AR & VR ___
+BERTje AR on AR:
+Confusion matrix ['incorrect', 'correct']:
+[[13387   199]
+ [   44 13542]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.996724  0.985353  0.991006    0.994429    13586
+correct     0.985518  0.996761  0.991108    0.987746    13586
+Macro F1:
+0.991056679393298
+Micro F1:
+0.9910569704107169
+Average F1:
+0.991056679393298
+Macro F0.5:
+0.9910874665603838
+Micro F0.5:
+0.9910569704107169
+Average F0.5:
+0.9910874665603838
+Accuracy:
+0.9910569704107169
+_____________________
+BERTje AR on VR:
+Confusion matrix ['incorrect', 'correct']:
+[[ 6852  6734]
+ [   44 13542]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.993619  0.504343  0.669075    0.832159    13586
+correct     0.667883  0.996761  0.799835    0.715070    13586
+Macro F1:
+0.7344549542488723
+Micro F1:
+0.7505520388635359
+Average F1:
+0.7344549542488723
+Macro F0.5:
+0.7736147842468089
+Micro F0.5:
+0.7505520388635359
+Average F0.5:
+0.7736147842468089
+Accuracy:
+0.7505520388635359
+_____________________
+BERTje VR on VR:
+Confusion matrix ['incorrect', 'correct']:
+[[13276   310]
+ [  193 13393]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.985671  0.977182  0.981408    0.983961    13586
+correct     0.977377  0.985794  0.981568    0.979049    13586
+Macro F1:
+0.9814879535479086
+Micro F1:
+0.9814882967760931
+Average F1:
+0.9814879535479086
+Macro F0.5:
+0.9815052181011339
+Micro F0.5:
+0.981488296776093
+Average F0.5:
+0.9815052181011339
+Accuracy:
+0.9814882967760931
+_____________________
+RobBERT AR on AR:
+Confusion matrix ['incorrect', 'correct']:
+[[13553    33]
+ [    7 13579]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.999484  0.997571  0.998526    0.999101    13586
+correct     0.997576  0.999485  0.998529    0.997957    13586
+Macro F1:
+0.9985278950160519
+Micro F1:
+0.998527896363904
+Average F1:
+0.9985278950160519
+Macro F0.5:
+0.998528771886803
+Micro F0.5:
+0.998527896363904
+Average F0.5:
+0.998528771886803
+Accuracy:
+0.998527896363904
+_____________________
+RobBERT AR on VR:
+Confusion matrix ['incorrect', 'correct']:
+[[ 7911  5675]
+ [    7 13579]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.999116  0.582291  0.735770    0.873989    13586
+correct     0.705256  0.999485  0.826979    0.749376    13586
+Macro F1:
+0.7813746914150861
+Micro F1:
+0.7908876784925659
+Average F1:
+0.7813746914150861
+Macro F0.5:
+0.8116827612254336
+Micro F0.5:
+0.7908876784925659
+Average F0.5:
+0.8116827612254336
+Accuracy:
+0.7908876784925659
+_____________________
+RobBERT VR on VR:
+Confusion matrix ['incorrect', 'correct']:
+[[13403   183]
+ [   83 13503]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.993845  0.986530  0.990174    0.992374    13586
+correct     0.986629  0.993891  0.990246    0.988073    13586
+Macro F1:
+0.9902103782263193
+Micro F1:
+0.9902105108199617
+Average F1:
+0.9902103782263193
+Macro F0.5:
+0.9902231743586152
+Micro F0.5:
+0.9902105108199617
+Average F0.5:
+0.9902231743586152
+Accuracy:
+0.9902105108199617
+_____________________
+GPT-2 AR on AR:
+Confusion matrix ['incorrect', 'correct']:
+[[13524    62]
+ [    4 13582]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.999704  0.995436  0.997566    0.998848    13586
+correct     0.995456  0.999706  0.997576    0.996303    13586
+Macro F1:
+0.9975710179332589
+Micro F1:
+0.9975710290004416
+Average F1:
+0.9975710179332589
+Macro F0.5:
+0.9975753747719431
+Micro F0.5:
+0.9975710290004417
+Average F0.5:
+0.9975753747719431
+Accuracy:
+0.9975710290004416
+_____________________
+GPT-2 AR on VR:
+Confusion matrix ['incorrect', 'correct']:
+[[ 5669  7917]
+ [    4 13582]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.999295  0.417268  0.588712    0.781328    13586
+correct     0.631750  0.999706  0.774234    0.681951    13586
+Macro F1:
+0.6814728871276194
+Micro F1:
+0.7084866774620934
+Average F1:
+0.6814728871276194
+Macro F0.5:
+0.7316390398186711
+Micro F0.5:
+0.7084866774620934
+Average F0.5:
+0.7316390398186711
+Accuracy:
+0.7084866774620934
+_____________________
+GPT-2 VR on VR:
+Confusion matrix ['incorrect', 'correct']:
+[[13244   342]
+ [  166 13420]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.987621  0.974827  0.981182    0.985036    13586
+correct     0.975149  0.987782  0.981425    0.977650    13586
+Macro F1:
+0.9813034994127918
+Micro F1:
+0.9813042838215811
+Average F1:
+0.9813034994127918
+Macro F0.5:
+0.9813425565814555
+Micro F0.5:
+0.9813042838215811
+Average F0.5:
+0.9813425565814555
+Accuracy:
+0.9813042838215811
+_____________________
+___ VT ___
+BERTje AR on VT:
+Confusion matrix ['incorrect', 'correct']:
+[[  528  1714]
+ [   42 11302]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.926316  0.235504  0.375533    0.583812     2242
+correct     0.868316  0.996298  0.927915    0.891212    11344
+Macro F1:
+0.651724021143259
+Micro F1:
+0.8707493007507728
+Average F1:
+0.651724021143259
+Macro F0.5:
+0.7375124688307133
+Micro F0.5:
+0.8707493007507728
+Average F0.5:
+0.7375124688307133
+Accuracy:
+0.8707493007507728
+_____________________
+BERTje VR on VT:
+Confusion matrix ['incorrect', 'correct']:
+[[ 1763   479]
+ [  171 11173]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.911582  0.786351  0.844349    0.883444     2242
+correct     0.958891  0.984926  0.971734    0.963987    11344
+Macro F1:
+0.9080414368249284
+Micro F1:
+0.9521566318268806
+Average F1:
+0.9080414368249284
+Macro F0.5:
+0.9237155068732659
+Micro F0.5:
+0.9521566318268806
+Average F0.5:
+0.9237155068732659
+Accuracy:
+0.9521566318268806
+_____________________
+RobBERT AR on VT:
+Confusion matrix ['incorrect', 'correct']:
+[[ 1713   529]
+ [    7 11337]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.995930  0.764050  0.864715    0.938939     2242
+correct     0.955419  0.999383  0.976907    0.963899    11344
+Macro F1:
+0.920810648163151
+Micro F1:
+0.9605476225526277
+Average F1:
+0.920810648163151
+Macro F0.5:
+0.9514191493320296
+Micro F0.5:
+0.9605476225526277
+Average F0.5:
+0.9514191493320296
+Accuracy:
+0.9605476225526277
+_____________________
+RobBERT VR on VT:
+Confusion matrix ['incorrect', 'correct']:
+[[ 1798   444]
+ [   74 11270]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.960470  0.801963  0.874088    0.923947     2242
+correct     0.962097  0.993477  0.977535    0.968213    11344
+Macro F1:
+0.9258116951638473
+Micro F1:
+0.9618725158251141
+Average F1:
+0.9258116951638473
+Macro F0.5:
+0.946079807729663
+Micro F0.5:
+0.9618725158251141
+Average F0.5:
+0.946079807729663
+Accuracy:
+0.9618725158251141
+_____________________
+GPT-2 AR on VT:
+Confusion matrix ['incorrect', 'correct']:
+[[ 1636   606]
+ [    4 11340]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.997561  0.729706  0.842865    0.929334     2242
+correct     0.949272  0.999647  0.973809    0.958937    11344
+Macro F1:
+0.9083365021681908
+Micro F1:
+0.9551008390990726
+Average F1:
+0.9083365021681908
+Macro F0.5:
+0.9441353933318128
+Micro F0.5:
+0.9551008390990726
+Average F0.5:
+0.9441353933318128
+Accuracy:
+0.9551008390990726
+_____________________
+GPT-2 VR on VT:
+Confusion matrix ['incorrect', 'correct']:
+[[ 1679   563]
+ [  153 11191]]
+           Precision    Recall  F1 Score  F0.5 Score  Support
+incorrect   0.916485  0.748885  0.824251     0.87722     2242
+correct     0.952101  0.986513  0.969002     0.95879    11344
+Macro F1:
+0.8966264975943146
+Micro F1:
+0.9472986898277639
+Average F1:
+0.8966264975943146
+Macro F0.5:
+0.9180053739875654
+Micro F0.5:
+0.947298689827764
+Average F0.5:
+0.9180053739875654
+Accuracy:
+0.9472986898277639
+_____________________
+
+Process finished with exit code 0
