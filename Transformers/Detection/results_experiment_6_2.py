@@ -18,15 +18,15 @@ def get_results_experiment_6():
     test_gold = ['correct' for _ in range(len(df_test['original']))] + \
                 ['incorrect' for _ in range(len(df_test['original']))]
 
-    test_AR_predicted_bertje = read_predictions('Predictions/predictions_bertje_AR_on_AR.txt')
-    test_AR_VR_predicted_bertje = read_predictions('Predictions/predictions_bertje_AR_on_VR.txt')
-    test_VR_predicted_bertje = read_predictions('Predictions/predictions_bertje_VR_on_VR.txt')
-    test_AR_predicted_robbert = read_predictions('Predictions/predictions_robbert_AR_on_AR.txt')
-    test_AR_VR_predicted_robbert = read_predictions('Predictions/predictions_robbert_AR_on_VR.txt')
-    test_VR_predicted_robbert = read_predictions('Predictions/predictions_robbert_VR_on_VR.txt')
-    test_AR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_AR_on_AR.txt')
-    test_AR_VR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_AR_on_VR.txt')
-    test_VR_predicted_gpt2 = read_predictions('Predictions/predictions_gpt2_VR_on_VR.txt')
+    test_AR_predicted_bertje = read_predictions('Predictions2/predictions_bertje_AR_on_AR2.txt')
+    test_AR_VR_predicted_bertje = read_predictions('Predictions2/predictions_bertje_AR_on_VR2.txt')
+    test_VR_predicted_bertje = read_predictions('Predictions2/predictions_bertje_VR_on_VR2.txt')
+    test_AR_predicted_robbert = read_predictions('Predictions2/predictions_robbert_AR_on_AR2.txt')
+    test_AR_VR_predicted_robbert = read_predictions('Predictions2/predictions_robbert_AR_on_VR2.txt')
+    test_VR_predicted_robbert = read_predictions('Predictions2/predictions_robbert_VR_on_VR2.txt')
+    test_AR_predicted_gpt2 = read_predictions('Predictions2/predictions_gpt2_AR_on_AR2.txt')
+    test_AR_VR_predicted_gpt2 = read_predictions('Predictions2/predictions_gpt2_AR_on_VR2.txt')
+    test_VR_predicted_gpt2 = read_predictions('Predictions2/predictions_gpt2_VR_on_VR2.txt')
 
     print('BERTje AR on AR:')
     get_metrics(test_gold, test_AR_predicted_bertje)
@@ -53,13 +53,6 @@ def get_results_experiment_6():
     print('RobBERT VR on VR:')
     get_metrics(test_gold, test_VR_predicted_robbert)
 
-    # for i, gold in enumerate(test_gold):
-    #     if gold != test_VR_predicted_robbert[i]:
-    #         try:
-    #             print(i, gold, test_VR_predicted_robbert[i], df_test['original'][i], df_test['verbs_random_no_punc'][i])
-    #         except KeyError:
-    #             print(i-13586, gold, test_VR_predicted_robbert[i-13586], df_test['original'][i-13586], df_test['verbs_random_no_punc'][i-13586])
-
     print('GPT-2 AR on AR:')
     get_metrics(test_gold, test_AR_predicted_gpt2)
 
@@ -81,12 +74,12 @@ def get_results_on_VT_exp_6():
 
     test_gold = ['correct' if label == 'correct' else 'incorrect' for label in df_test['general_error_label']]
 
-    test_VT_predicted_bertje_AR = read_predictions('Predictions/predictions_bertje_AR_on_VT.txt')
-    test_VT_predicted_bertje_VR = read_predictions('Predictions/predictions_bertje_VR_on_VT.txt')
-    test_VT_predicted_robbert_AR = read_predictions('Predictions/predictions_robbert_AR_on_VT.txt')
-    test_VT_predicted_robbert_VR = read_predictions('Predictions/predictions_robbert_VR_on_VT.txt')
-    test_VT_predicted_gpt2_AR = read_predictions('Predictions/predictions_gpt2_AR_on_VT.txt')
-    test_VT_predicted_gpt2_VR = read_predictions('Predictions/predictions_gpt2_VR_on_VT.txt')
+    test_VT_predicted_bertje_AR = read_predictions('Predictions2/predictions_bertje_AR_on_VT2.txt')
+    test_VT_predicted_bertje_VR = read_predictions('Predictions2/predictions_bertje_VR_on_VT2.txt')
+    test_VT_predicted_robbert_AR = read_predictions('Predictions2/predictions_robbert_AR_on_VT2.txt')
+    test_VT_predicted_robbert_VR = read_predictions('Predictions2/predictions_robbert_VR_on_VT2.txt')
+    test_VT_predicted_gpt2_AR = read_predictions('Predictions2/predictions_gpt2_AR_on_VT2.txt')
+    test_VT_predicted_gpt2_VR = read_predictions('Predictions2/predictions_gpt2_VR_on_VT2.txt')
 
     print('BERTje AR on VT:')
     get_metrics(test_gold, test_VT_predicted_bertje_AR)
