@@ -16,20 +16,20 @@ def run_experiment_4(datasplit):
     :return:
     """
     train_disco = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
-                                                                'train', 'C') + \
+                                                                'train', 'Correct') + \
                   read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
                                                                 'train', datasplit)
 
-    test_disco = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
-                                                               'test', 'C') + \
-                 read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
-                                                               'test', datasplit)
+    # test_disco = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
+    #                                                            'test', 'Correct') + \
+    #              read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
+    #                                                            'test', datasplit)
 
     vectorizer = CountVectorizer()
     train_disco_vectorized = vectorizer.fit_transform(train_disco)
     print('Vocabulary built and training data vectorized.')
-    test_disco_vectorized = vectorizer.transform(test_disco)
-    print('Test data vectorized.')
+    # test_disco_vectorized = vectorizer.transform(test_disco)
+    # print('Test data vectorized.')
 
     logreg = LogisticRegression(max_iter=1000)
     print('Classifier instantiated.')
@@ -38,14 +38,14 @@ def run_experiment_4(datasplit):
                                         ['incorrect' for _ in range(int(len(train_disco) / 2))]))
     print('Classifier fitted.')
 
-    predictions = logreg.predict(test_disco_vectorized)
-    print('Test instances predicted.')
-
-    with open(f'Data/Tuples/Predictions/predictions_disco_simple_{datasplit}.txt', 'w') as outfile:
-        for pred in predictions:
-            outfile.write(f'{pred}\n')
-
-    print('Predictions saved to file.')
+    # predictions = logreg.predict(test_disco_vectorized)
+    # print('Test instances predicted.')
+    #
+    # with open(f'Data/Tuples/Predictions/predictions_disco_simple_{datasplit}.txt', 'w') as outfile:
+    #     for pred in predictions:
+    #         outfile.write(f'{pred}\n')
+    #
+    # print('Predictions saved to file.')
 
     with open(f'Classifiers/vectorizer_disco_simple_{datasplit}.pkl', 'wb') as outfile:
         pickle.dump(vectorizer, outfile)
@@ -56,5 +56,5 @@ def run_experiment_4(datasplit):
 
 
 if __name__ == '__main__':
-    run_experiment_4('AR')
-    run_experiment_4('VR')
+    run_experiment_4('Rand')
+    run_experiment_4('Verbs')

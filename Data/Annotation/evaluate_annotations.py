@@ -7,6 +7,10 @@ import pandas as pd
 
 
 def change_analysis_based_on_native_speaker_verification():
+    """
+
+    :return:
+    """
     df_a1 = pd.read_csv('Annotations_A1/Annotations/leerder_annotated_data_A1.tsv', sep='\t', header=0,
                         encoding='utf-8')
     df_a2 = pd.read_csv('Annotations_A2/Annotations/leerder_annotated_data_A2.tsv', sep='\t', header=0,

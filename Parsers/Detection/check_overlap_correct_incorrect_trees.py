@@ -7,9 +7,9 @@ import pandas as pd
 
 
 def get_overlap_statistics():
-    df_train_c = pd.read_csv('Data/Trees/train_C.tsv', encoding='utf-8', sep='\t', header=0)
-    df_train_ar = pd.read_csv('Data/Trees/train_AR.tsv', encoding='utf-8', sep='\t', header=0)
-    df_train_vr = pd.read_csv('Data/Trees/train_VR.tsv', encoding='utf-8', sep='\t', header=0)
+    df_train_c = pd.read_csv('Data/Trees/train_Correct.tsv', encoding='utf-8', sep='\t', header=0)
+    df_train_ar = pd.read_csv('Data/Trees/train_Rand.tsv', encoding='utf-8', sep='\t', header=0)
+    df_train_vr = pd.read_csv('Data/Trees/train_Verbs.tsv', encoding='utf-8', sep='\t', header=0)
 
     unique_trees_c = {tree for tree in df_train_c['tree']}
     unique_trees_ar = {tree for tree in df_train_ar['tree']}

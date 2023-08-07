@@ -14,7 +14,7 @@ def check_all_classifiers_on_all_datasets(train):
     :param str train:
     :return:
     """
-    df_VT = pd.read_csv('../../Data/Dataset_Construction/Permuted_Datasets/'
+    df_Info = pd.read_csv('../../Data/Dataset_Construction/Permuted_Datasets/'
                         'test_shuffled_random_all_and_verbs_and_tendencies.tsv',
                         encoding='utf-8', header=0, sep='\t')
 
@@ -25,67 +25,82 @@ def check_all_classifiers_on_all_datasets(train):
         logreg = pickle.load(infile)
 
     if not any(['simple' in train, 'spacy' in train]):
-        test_C = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'C')
-        if not 'VR' in train:
-            test_AR = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'AR')
-        test_VR = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'VR')
-        test_VT = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'VT')
+        test_Correct = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'Correct')
+        if not 'Verbs' in train:
+            test_Rand = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'Rand')
+        test_Verbs = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'Verbs')
+        test_Info = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'Info')
+        test_Learn = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco/tuple_data_disco', 'test', 'Learn')
     elif 'simple' in train:
-        test_C = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
-                                                               'test', 'C')
-        if not 'VR' in train:
-            test_AR = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
-                                                                    'test', 'AR')
-        test_VR = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
-                                                                'test', 'VR')
-        test_VT = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
-                                                                'test', 'VT')
+        test_Correct = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
+                                                               'test', 'Correct')
+        if not 'Verbs' in train:
+            test_Rand = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
+                                                                    'test', 'Rand')
+        test_Verbs = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
+                                                                'test', 'Verbs')
+        test_Info = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
+                                                                'test', 'Info')
+        test_Learn = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Disco_simple/tuple_data_simple_disco',
+                                                                  'test', 'Learn')
     else:
-        test_C = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'C',
+        test_Correct = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'Correct',
                                                                spacy=True)
-        if not 'VR' in train:
-            test_AR = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'AR',
+        if not 'Verbs' in train:
+            test_Rand = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'Rand',
                                                                     spacy=True)
-        test_VR = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'VR',
+        test_Verbs = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'Verbs',
                                                                 spacy=True)
-        test_VT = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'VT',
+        test_Info = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'Info',
                                                                 spacy=True)
+        test_Learn = read_in_json_data_and_convert_to_str_sequence('Data/Tuples/Spacy/tuple_data_spacy', 'test', 'Learn',
+                                                                  spacy=True)
 
-    if not 'VR' in train:
-        test_AR_full = test_C + test_AR
-        test_AR_full_vectorized = vectorizer.transform(test_AR_full)
-        predictions_AR = logreg.predict(test_AR_full_vectorized)
-        with open(f'Data/Tuples/Predictions/predictions_{train}_train_AR_test.txt', 'w') as outfile:
-            for pred in predictions_AR:
+    if not 'Verbs' in train:
+        test_Rand_full = test_Correct + test_Rand
+        test_Rand_full_vectorized = vectorizer.transform(test_Rand_full)
+        predictions_Rand = logreg.predict(test_Rand_full_vectorized)
+        with open(f'Data/Tuples/Predictions/predictions_{train}_train_Rand_test.txt', 'w') as outfile:
+            for pred in predictions_Rand:
                 outfile.write(f'{pred}\n')
-        gold_labels_AR = ['correct' for _ in range(len(test_C))] + ['incorrect' for _ in range(len(test_AR))]
-        print(f'Results for {train} trained classifier on AR dataset:')
-        get_metrics(gold_labels_AR, predictions_AR)
+        gold_labels_Rand = ['correct' for _ in range(len(test_Correct))] + ['incorrect' for _ in range(len(test_Rand))]
+        print(f'Results for {train} trained classifier on Rand dataset:')
+        get_metrics(gold_labels_Rand, predictions_Rand)
         print('\n______\n')
 
-    test_VR_full = test_C + test_VR
-    test_VR_full_vectorized = vectorizer.transform(test_VR_full)
-    predictions_VR = logreg.predict(test_VR_full_vectorized)
-    with open(f'Data/Tuples/Predictions/predictions_{train}_train_VR_test.txt', 'w') as outfile:
-        for pred in predictions_VR:
+    test_Verbs_full = test_Correct + test_Verbs
+    test_Verbs_full_vectorized = vectorizer.transform(test_Verbs_full)
+    predictions_Verbs = logreg.predict(test_Verbs_full_vectorized)
+    with open(f'Data/Tuples/Predictions/predictions_{train}_train_Verbs_test.txt', 'w') as outfile:
+        for pred in predictions_Verbs:
             outfile.write(f'{pred}\n')
-    gold_labels_VR = ['correct' for _ in range(len(test_C))] + \
-                     ['incorrect' for _ in range(len(test_VR))]
-    print(f'Results for {train} trained classifier on VR dataset:')
-    get_metrics(gold_labels_VR, predictions_VR)
+    gold_labels_Verbs = ['correct' for _ in range(len(test_Correct))] + \
+                     ['incorrect' for _ in range(len(test_Verbs))]
+    print(f'Results for {train} trained classifier on Verbs dataset:')
+    get_metrics(gold_labels_Verbs, predictions_Verbs)
     print('\n______\n')
 
-    test_VT_vectorized = vectorizer.transform(test_VT)
-    predictions_VT = logreg.predict(test_VT_vectorized)
-    with open(f'Data/Tuples/Predictions/predictions_{train}_train_VT_test.txt', 'w') as outfile:
-        for pred in predictions_VT:
+    test_Info_vectorized = vectorizer.transform(test_Info)
+    predictions_Info = logreg.predict(test_Info_vectorized)
+    with open(f'Data/Tuples/Predictions/predictions_{train}_train_Info_test.txt', 'w') as outfile:
+        for pred in predictions_Info:
             outfile.write(f'{pred}\n')
-    gold_labels_VT = ['correct' if label == 'correct' else 'incorrect' for label in df_VT['general_error_label']]
-    print(f'Results for {train} trained classifier on VT dataset:')
-    get_metrics(gold_labels_VT, predictions_VT)
+    gold_labels_Info = ['correct' if label == 'correct' else 'incorrect' for label in df_Info['general_error_label']]
+    print(f'Results for {train} trained classifier on Info dataset:')
+    get_metrics(gold_labels_Info, predictions_Info)
+    print('\n______\n')
+
+    test_Learn_vectorized = vectorizer.transform(test_Learn)
+    predictions_Learn = logreg.predict(test_Learn_vectorized)
+    with open(f'Data/Tuples/Predictions/predictions_{train}_train_Learn_test.txt', 'w') as outfile:
+        for pred in predictions_Info:
+            outfile.write(f'{pred}\n')
+    gold_labels_Learn = ['incorrect' for _ in range(len(test_Learn))]
+    print(f'Results for {train} trained classifier on Learn dataset:')
+    get_metrics(gold_labels_Learn, predictions_Learn)
     print('\n______\n')
 
 
 if __name__ == '__main__':
-    for train in ['disco_AR', 'disco_VR', 'disco_simple_AR', 'disco_simple_VR', 'spacy_AR', 'spacy_VR']:
+    for train in ['disco_Rand', 'disco_Verbs', 'disco_simple_Rand', 'disco_simple_Verbs', 'spacy_Rand', 'spacy_Verbs']:
         check_all_classifiers_on_all_datasets(train)

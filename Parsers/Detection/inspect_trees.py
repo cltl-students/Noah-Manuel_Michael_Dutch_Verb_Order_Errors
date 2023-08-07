@@ -12,10 +12,10 @@ def get_num_of_unique_trees():
 
     :return:
     """
-    pool = pd.read_csv('Data/Trees/train_C.tsv', sep='\t', header=0, encoding='utf-8')
-    test_C = pd.read_csv('Data/Trees/test_C.tsv', sep='\t', header=0, encoding='utf-8')
-    test_AR = pd.read_csv('Data/Trees/test_AR.tsv', sep='\t', header=0, encoding='utf-8')
-    test_VR = pd.read_csv('Data/Trees/test_VR.tsv', sep='\t', header=0, encoding='utf-8')
+    pool = pd.read_csv('Data/Trees/train_Correct.tsv', sep='\t', header=0, encoding='utf-8')
+    test_C = pd.read_csv('Data/Trees/test_Correct.tsv', sep='\t', header=0, encoding='utf-8')
+    test_AR = pd.read_csv('Data/Trees/test_Rand.tsv', sep='\t', header=0, encoding='utf-8')
+    test_VR = pd.read_csv('Data/Trees/test_Verbs.tsv', sep='\t', header=0, encoding='utf-8')
 
     for df in [pool, test_C, test_AR, test_VR]:
         print('___')

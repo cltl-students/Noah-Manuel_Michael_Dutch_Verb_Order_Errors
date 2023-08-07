@@ -37,7 +37,7 @@ def read_in_json_data_and_convert_to_str_sequence(path, split, dataset, spacy=Fa
             else:  # otherwise, each line is already the list of tuples
                 json_data.append(' '.join([(str(tup[0]) + '_' + str(tup[1])) for tup in sent_tuples]))
 
-    print(f'{split.title()} {dataset.upper()} tuples read in.')
+    print(f'{split.title()} {dataset.title()} tuples read in.')
 
     return json_data
 

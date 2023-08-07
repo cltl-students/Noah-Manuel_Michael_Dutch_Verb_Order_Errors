@@ -10,7 +10,7 @@ import json
 
 def get_tuples_disco():
     for split in ['test', 'train']:
-        for dataset in ['C', 'AR', 'VR', 'VT']:
+        for dataset in ['Learn', 'Correct', 'Rand', 'Verbs', 'Info']:
             df = pd.read_csv(f'Data/Trees/{split}_{dataset}.tsv', encoding='utf-8', header=0, sep='\t')
 
             for tree in df['tree']:

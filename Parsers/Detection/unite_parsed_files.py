@@ -25,11 +25,11 @@ def unite_parsed_tree_data():
         contatenated_df = contatenated_df.drop(columns='index')
 
         if path == 'Data/Trees/Trees/train_correct_parsed':
-            contatenated_df.to_csv('Data/train_C.tsv', index_label='index', encoding='utf-8', sep='\t')
+            contatenated_df.to_csv('Data/train_Correct.tsv', index_label='index', encoding='utf-8', sep='\t')
         elif path == 'Data/Trees/Trees/train_incorrect_parsed':
-            contatenated_df.to_csv('Data/train_AR.tsv', index_label='index', encoding='utf-8', sep='\t')
+            contatenated_df.to_csv('Data/train_Rand.tsv', index_label='index', encoding='utf-8', sep='\t')
         else:
-            contatenated_df.to_csv('Data/train_VR.tsv', index_label='index', encoding='utf-8', sep='\t')
+            contatenated_df.to_csv('Data/train_Verbs.tsv', index_label='index', encoding='utf-8', sep='\t')
 
 
 if __name__ == '__main__':
