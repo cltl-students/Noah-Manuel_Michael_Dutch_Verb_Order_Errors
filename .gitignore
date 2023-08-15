@@ -78,3 +78,7 @@
 /Transformers/Detection/GPT-2/finetuned_gpt2_sequence_classification_verbs_no_punc2/
 /Transformers/Detection/GPT-2/finetuned_gpt2_sequence_classification_verbs_no_punc3/
 /Transformers/Fine-tuning/
+/Data/Annotation/Data/leerder_erroneous_sentences.tsv
+/Data/Dataset_Construction/Permuted_Datasets/dev_shuffled_random_all_and_verbs_sampled_transformer.tsv
+/Data/Tests/
+/Transformers/Other/
